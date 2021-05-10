@@ -38,7 +38,7 @@ public class Test {
 		myWindow.setVisible(true);
 		
 		int temp = 0;
-		while(true){
+		while(myWindow.isShowing()){
 			for (int i = 1; i < 100; i++) {
 				series[0][i] = ((double) i)/10;
 				series[1][i] = Math.sin(((double)i+temp)/10);
