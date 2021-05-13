@@ -1,12 +1,9 @@
 package simulator.modules.food;
 
-import javax.swing.JFrame;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.DefaultXYDataset;
 
 /**
  * This class is intended to serve as Test class mainly for testing JFreeChart.
@@ -17,41 +14,37 @@ import org.jfree.data.xy.DefaultXYDataset;
  */
 public class Test {
 
-	public static void main(String[] args) {
-		JFrame myWindow = new JFrame("Foo");
+	public static void main(String[] args) throws IOException {
+		FoodModule foodModule = new FoodModule();
+		ChartDisplay chartDisplay = new ChartDisplay(foodModule);
+		System.out.println("Starting test...");
+		chartDisplay.start();
 		
-		DefaultXYDataset xyDataset = new DefaultXYDataset();
-		double [][] series = new double[2][100];
-		for (int i = 1; i < 100; i++) {
-			series[0][i] = ((double) i)/10;
-			series[1][i] = .0;
+		boolean exit = false;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		while (!exit) {
+			System.out.println("Add a [h]igh, [m]ed or [l]ow glycemic food to simulation or [e]xit...");
+			String input = br.readLine();
+			char[] in = input.toCharArray();
+			switch (in[0]) {
+				case 'h':
+					foodModule.addFood(new HighGlycemicFood (1, foodModule.getTime()) );
+					break;
+				case 'm':
+					foodModule.addFood(new MedGlycemicFood (1, foodModule.getTime()) );
+					break;
+				case 'l':
+					break;
+				case 'e':
+					exit = true;
+					break;
+				default:
+					System.out.println(in);
+			}
 		}
-		xyDataset.addSeries("Sinus", series);
 		
-		JFreeChart lineChart = ChartFactory.createXYLineChart("My Line Chart", "My X Axis", "Y-axis", xyDataset, PlotOrientation.VERTICAL, true, true, false);
-
-		ChartPanel chartPanel = new ChartPanel(lineChart);
-
-		myWindow.add(chartPanel);
-		myWindow.setSize(800, 400);
-		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		myWindow.setVisible(true);
-		
-		int temp = 0;
-		while(myWindow.isShowing()){
-			for (int i = 1; i < 100; i++) {
-				series[0][i] = ((double) i)/10;
-				series[1][i] = Math.sin(((double)i+temp)/10);
-				xyDataset.seriesChanged(null);
-				try {
-					Thread.sleep(170);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}	
-			temp+=100;
-		}
+		chartDisplay.interrupt();
+		System.exit(0);
 	}
 
 }

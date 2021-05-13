@@ -1,0 +1,18 @@
+<uml>
+   <greenVersion="30100"/>
+   <type>
+      <name="=HIS_SCS_Insulin_Pump/src<simulator{Diabetes.java[Diabetes"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="128"/>
+      <y="188"/>
+   </type>
+   <type>
+      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{Test.java[Test"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="448"/>
+      <y="202"/>
+   </type>
+</uml>
+
