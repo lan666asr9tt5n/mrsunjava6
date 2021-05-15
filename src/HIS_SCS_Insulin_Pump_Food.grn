@@ -4,8 +4,8 @@
       <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{Test.java[Test"/>
       <height="87"/>
       <width="146"/>
-      <x="590"/>
-      <y="318"/>
+      <x="602"/>
+      <y="306"/>
    </type>
    <type>
       <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
@@ -60,20 +60,27 @@
       <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <height="-1"/>
       <width="-1"/>
-      <x="413"/>
-      <y="60"/>
+      <x="465"/>
+      <y="49"/>
    </type>
    <type>
       <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
       <height="-1"/>
       <width="-1"/>
-      <x="679"/>
-      <y="33"/>
+      <x="702"/>
+      <y="77"/>
    </type>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
       <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
+      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <bendpoints>
       </bendpoints>
    </relationship>

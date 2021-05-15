@@ -22,8 +22,8 @@ public class ChartDisplay extends Thread {
 	/**
 	 * 
 	 */
-	public ChartDisplay(FoodModule foodModule) {
-		this.foodModule = foodModule;
+	public ChartDisplay(FoodModule foodModule2) {
+		foodModule = foodModule2;
 	}
 
 	@Override
