@@ -9,12 +9,13 @@ package simulator.modules.food;
  */
 public abstract class AbstractFood {
 
-	int ammount;
-	int time;
+	protected int ammount;
+	protected int time;
 
 	public AbstractFood(int ammount, int time) {
 		this.ammount = ammount;
 		this.time = time;
+		System.out.println(this);
 	}
 
 	/**

@@ -15,7 +15,6 @@ public class HighGlycemicFood extends AbstractFood {
 	 */
 	public HighGlycemicFood(int ammount, int time) {
 		super(ammount, time);
-		System.out.println(this);
 	}
 
 	/* (non-Javadoc)
