@@ -1,0 +1,113 @@
+\documentclass[pdflatex,a4paper,11pt,english]{scrreprt}
+\usepackage[english]{varioref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{url}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
+
+\begin{document}
+
+\begin{titlepage}
+\vspace*{4cm}
+\begin{center}
+\Large
+Safety Critical Systems WS2008\\
+Prof. Dr. Wagner\\
+\vspace{4cm}
+\normalsize
+University of Applied Sciences Frankfurt\\
+Faculty 2 - Computer Science and Engineering\\
+M.Sc. - Program High-Integrity Systems\\
+\vspace{2cm}
+Insulin Pump Project\\
+Documentation\\
+Team 1\\
+\vspace{2cm}
+Wojciech Czylok, Rüdiger Gad, Elmar Köhler, Solomon Nega, Beril Olgun,\\
+Nikolas Orlowski, Christina Paulsen, Jan Rabold, Murat Shahrashoub
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\listoffigures
+
+%\lstlistoflistings
+
+\chapter{Project Management}
+\section{Organization}
+\subsection{Development Process Model}
+The spiral model is used for the main parts of our development.
+See the project plan and the mind map for more detailt
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/Insulin_Pump_Mindmap.png}
+\caption{
+Mindmap of the problem
+\label{fig:mindmap}
+}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/projectplan_page1}
+\caption{
+Project Plan Page 1
+\label{fig:projectplan1}
+}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/projectplan_page2}
+\caption{
+Project Plan Page 2
+\label{fig:projectplan2}
+}
+\end{figure}
+\newpage %TODO fix this hack
+
+\subsection{Standardization}
+Common value for measuring the blood glucose level is "mmol/l".
+Programming language is Java.
+
+\subsection{Specifications}
+What do we want to achieve?
+Simulation of the human body with diabetes and simulation of insulin pump.
+Insulin pump has a sensor and automatic as well as manual injection.
+
+\subsection{Risks}
+People might get harmed or killed.
+Project doesn't complete.
+
+\subsubsection{Risk Handling}
+Low glucose levels result in more serious effects on the health or even life then high levels.
+So high glucose levels are prefered if there are situations when no clear preference can be made or one is in doubt.
+
+\chapter{Development}
+\input{requirements_analysis}
+
+\input{list_of_requirements}
+
+\section{Analysis Model}
+
+
+\section{Design Model}
+
+\section{Code}
+
+\end{document}
