@@ -1,0 +1,43 @@
+package behavior.insulin;
+
+import java.util.Date;
+
+public class Injection {
+
+	private Insulin insulin;
+	private double insulinAmount;
+	private Date injectionTime;
+	
+	private Date lastCalculation;
+
+	public Injection(Insulin insulin, double amount) {
+		this.setValues(insulin, new Date(), amount);
+	}
+
+	public Injection(Insulin insulin, Date timestamp, double amount) {
+		setValues(insulin, timestamp, amount);
+	}
+
+	private void setValues(Insulin insulin, Date timestamp, double amount) {
+		this.injectionTime = timestamp;
+		this.insulin = insulin;
+		this.insulinAmount = amount;
+		this.lastCalculation = timestamp;
+	}
+
+	public double getInsulinAmount(Date time){
+		double result = 0;
+		
+		double timelast = DateDiff(injectionTime, lastCalculation);
+		double timenow = DateDiff(injectionTime, time);
+		
+		result = insulin.getPercent(timelast, timenow) * insulinAmount;
+		
+		return result;
+	}
+	
+	private double DateDiff(Date date1, Date date2){
+		return (double)(date2.getTime()-date1.getTime())/3600000;
+	}
+	
+}
