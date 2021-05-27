@@ -1,4 +1,4 @@
-package behavior.insulin;
+package simulator.modules.insulin;
 
 
 public abstract class Insulin{

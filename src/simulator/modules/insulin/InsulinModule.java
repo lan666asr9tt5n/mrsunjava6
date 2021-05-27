@@ -1,4 +1,4 @@
-package behavior.insulin;
+package simulator.modules.insulin;
 
 import java.util.Date;
 import java.util.Vector;
