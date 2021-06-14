@@ -1,0 +1,54 @@
+\section{Design Models}
+These models represent the concrete class diagrams which are planned and are to
+be implemented
+
+\subsection{Behavioral Modules}
+
+\subsubsection{Diabetes}
+
+\newpage
+\subsubsection{Food}
+In order to provide the possibility for extensive and intuitive testing for the
+food module also some GUI components have been designed.
+These components include a frontend for input (e.g. adding food to the
+simulation etc.) and a display of the output.
+
+In order to provide large flexibility with respect to future changes the
+concrete food types inherit from an abstract class. This way it is possible to
+program to an abstraction (the abstract class) rather then implementations (the
+subclasses inheriting from the abstract class).
+Fulfilling this design principle provides large flexibiltiy when new (e.g. more
+finely grained behaving) food implementations should be realized.
+
+The update of the output display is implemented using the Observer Pattern.
+With the output ``ChartDisplay'' being the observer of the ``FoodModule''.
+
+The resulting class diagram is as follows (see
+\vref{fig:food_module_class_diagram}):
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/food_module_class_diagram.png}
+\caption{Food Module Class Diagram}
+\label{fig:food_module_class_diagram}
+\end{figure}
+
+\subsubsection{Insulin}
+
+\newpage
+\subsection{Body simulation}
+For implementing the body simulation and putting all the behavioral modules
+together while still providing large flexibility for further extensions and
+changes the Model View Controller paradigm is used.
+This should also allow an easy integration of the components of the insulin
+pump which interact with the human body (i.e. sensor and injection unit).
+
+The resulting class design is as follows  (see
+\vref{fig:body_simulation_class_diagram}): 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/body_simulation_classdiagram.png}
+\caption{Body Simulation Class Diagram}
+\label{fig:body_simulation_class_diagram}
+\end{figure}

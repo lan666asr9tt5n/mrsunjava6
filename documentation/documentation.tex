@@ -47,74 +47,20 @@ Nikolas Orlowski, Christina Paulsen, Jan Rabold, Murat Shahrashoub
 
 %\lstlistoflistings
 
+\newpage
 \chapter{Project Management}
-\section{Organization}
-\subsection{Development Process Model}
-The spiral model is used for the main parts of our development.
-See the project plan and the mind map for more detailt
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{images/Insulin_Pump_Mindmap.png}
-\caption{Mindmap of the problem}
-\label{fig:mindmap}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{images/projectplan_page1}
-\caption{Project Plan Page 1}
-\label{fig:projectplan1}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{images/projectplan_page2}
-\caption{Project Plan Page 2}
-\label{fig:projectplan2}
-\end{figure}
-
-\subsection{Standardization}
-Common value for measuring the blood glucose level is "mmol/l".
-Programming language is Java.
-
-\subsection{Specifications}
-What do we want to achieve?
-Simulation of the human body with diabetes and simulation of insulin pump.
-Insulin pump has a sensor and automatic as well as manual injection.
-
-\subsection{Risks}
-People might get harmed or killed.
-Project doesn't complete.
-
-\subsubsection{Risk Handling}
-Low glucose levels result in more serious effects on the health or even life then high levels.
-So high glucose levels are prefered if there are situations when no clear preference can be made or one is in doubt.
+\input{organization}
 
 \chapter{Development}
 \input{requirements_analysis}
 
 \input{list_of_requirements}
 
-\section{Analysis Model}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{images/Analysis_Model}
-\caption{Analysis Model}
-\label{fig:analysis_model}
-\end{figure}
+\newpage
+\input{analysis_models}
 
-\section{Design Model}
-
-\subsection{Behavioral Modules}
-
-\subsubsection{Food}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{images/food_module_class_diagram.png}
-\caption{Food Module Class Diagram}
-\label{fig:food_module_class_diagram}
-\end{figure}
+\newpage
+\input{design_models}
 
 \section{Code}
 
