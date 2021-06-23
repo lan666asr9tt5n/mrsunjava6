@@ -1,7 +1,7 @@
 \section{Requirements Analysis}
 Medical Problem, Theoretic background etc.
 
-\subsection{Research at start / first iteration of spiral}
+\subsection{Research}
 The research effort is split into three logical parts:
 \begin{itemize}
   \item Diabetes
@@ -72,11 +72,82 @@ critical question with respect to the implementation is the choice of the used
 data types for floatingpoint data as these data types are not guaranteed to be precise.
 
 \subsubsection{Insulin}
-
-\subsection{Research for second iteration of spiral / i.e. the body simulation}
-General question:
-How does insulin react with the glucose in the blood?
-We need to know this in order to produce sane outputs.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/Insulincrystals.jpg}
+\caption{Insulin crystals}
+\end{figure}
+Insulin is a hormone, which is produced in the beta-cells of the pancreas and it's essential for humans and animals. 
+Taking of insulin causes decreasing of the blood glucose level and consuming glucagon or energy source. 
+Glucagon and some other hormones (e.g. adrenaline, cortisone and pancreas hormones) will increase the blood glucose level.\\
+\newpage
+In addition some other properties:
+\begin{itemize}
+  \item after ingestion of carbohydrates the blood glucose level will be increased, 
+	  therefore insulin will be degraded to terminate this process
+  \item if fats and proteins are eaten at the same time as carbohydrates, 
+	  then it will cause delays in absorption of glucose
+  \item differences in the absorption speed of glucose between foods with the same amount
+  \item movement reduces the need of insulin
+\end{itemize}
+\newpage
+\underline{Types}\\
+There are some commonly used types of insulin:\\
+\begin{tabular}{lcr}
+	\textbf{Synonym} & \textbf{Starts working} & \textbf{Duration}\\
+	Insulin analogs (rapid-acting) & 5 to 15 minutes & 3 to 4 hours\\
+	Regular insulin(short-acting) & approx. 30 minutes & 5 to 8 hours\\
+	Semilente insulin (intermediate-acting) & 1 to 3 hours & 16 to 24 hours\\
+	Ultralente insulin (long-acting) & 4 to 6 hours & greater than 32 hours\\
+	Insulin glargine/ detemir & 1 to 2 hours & approx. 24 hours\\
+	Mixture of NPH and regular insulin & approx. 30 minutes & 16 to 24 hours\\
+	Mixture of semilente and ultralente & ? & 24 hours\\
+\end{tabular}
+\underline{Dosage and Timing}\\
+Usually insulin is released into the blood every 3 to 6 minutes. The central problem is to pick the right dose of insulin 
+and the right timing. The following diagram shows a plan of the glucose- and insulin levels during the day.\\
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/Suckale08_fig3_glucose_insulin_day.jpg}
+\caption{Influences of the blood glucose- and insulin level}
+\end{figure}
+It is impossible to know how much insulin is needed for an optimum blood glucose level, because of the complex and 
+interacting factors. For example some patients with diabetes require more insulin after drinking skim milk than 
+they do after taking an equivalent amount of fat, protein, carbohydrate, and fluid in some other form.\\
+\newpage
+\underline{Strategies}:\\
+\begin{itemize}
+  \item Long-acting insulin will be used for the approximate release of the pancreas (NPH, ultralente, glargine, detemir)
+  \item Short-acting insulin will be used for the anticipation of eating (insulin analogs like lispro, aspart and 
+	  glulisine can be used while- or after eating, regular insulin has to be used 30 minutes before eating)
+  \item The blood glucose level has to be checked before all meals and sometimes also at bedtime
+  \item Some guidelines call for check 2 hours after a meal
+\end{itemize}
+mmol/l <-> mg/dl convertion ; hypoglycemia \& hyperglycemia (Table)\\
+\begin{description}
+  \item[Red values of blood sugar (hypoglycemia)] The blood sugar is too deep. With progressive drop the blood sugar mirror, the diabetic can fall in coma.
+  \item[Green values of blood sugar] Blood sugar within the desirable range. Normal values.
+  \item[Turquoise values of blood sugar] The blood sugar is easily increased. (offen after a meal). With a person without diagnosed diabetes further is it necessary to check blood-measurements and to diagnose the diabetes.
+  \item[Blue values of blood sugar (hyperglycemia)] Blood sugar values are clearly too high. Non-diabetic should visit the doctor. 
+He must be classfy, if he gotten sick. A diabetic must inject immediately fast-effective correction insulin. 
+With further blood sugar rising is it possible to get the dangerous coma.
+\end{description}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/Conversion.jpg}
+\caption{Blood glucose levels}
+\end{figure}
+\underline{Existing products}\\
+Most insulin products give information about the duration and starting time. The glucose blood level differs from 
+human to human, therefore it's difficult to define the effect of the injected insulin. 
+Normal blood sugar values are from 4,5 to 7,0 mmol/L and we assume that it's possible to inject max. 12 units insulin 
+at once and normally an average of 5 units.\\
+\textbf{The effect of one unit insulin?}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/time_activity.jpg}
+\caption{Durations of different Canine Insulin types}
+\end{figure}
 
 \subsection{Requirements and Project Estimation}
 The estimation of the project was done using COCOMO 2.
@@ -101,7 +172,3 @@ Guessed Estimation based on Experts Cocomo 2:
 Effort 13.4 Person-months
 Schedule 8.5 Months
 \url{http://sunset.usc.edu/cgi-bin/expert_cocomo2000}
-
-Second Project extimation:
-
-
