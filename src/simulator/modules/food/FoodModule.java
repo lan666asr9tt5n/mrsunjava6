@@ -4,6 +4,7 @@
 package simulator.modules.food;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Observable;
 
@@ -27,7 +28,7 @@ public class FoodModule extends Observable {
 	/**
 	 * Add foods to module.
 	 */
-	void addFood(AbstractFood food) {
+	public void addFood(AbstractFood food) {
 		foods.add(food);
 	}
 
@@ -85,5 +86,16 @@ public class FoodModule extends Observable {
 		public String toString() {
 			return "t:" + this.time + " - g:" + this.glucose;
 		}
+	}
+
+	public double calculateOverallGlucose(Date time2) {
+		/*
+		 * Hack to convert date to int.
+		 * TODO: check if this works well!
+		 * Conversion factor to hours as in the insulin module.
+		 * TODO: Are hours ok for this purpose?
+		 */
+		int time = (int) (time2.getTime()/(1000*60*60));
+		return this.calculateOverallGlucose(time);
 	};
 }

@@ -5,53 +5,73 @@ package simulator.model;
 
 import java.util.Observable;
 import simulator.modules.food.AbstractFood;
+import simulator.modules.insulin.Injection;
 import simulator.modules.insulin.Insulin;
 import java.util.Date;
 import simulator.modules.food.FoodModule;
 import simulator.modules.insulin.InsulinModule;
 
 /**
+ * Combines all behavioral models and calculates overall values.
+ * 
  * @author rc
  *
  */
 public class Model extends Observable {
 
-	/**
-	 * 
+	/*
+	 * The single modules which are used to calculate the overall numbers.
 	 */
 	 private FoodModule foodModule;
-	/**
-	 * 
-	 */
-	 InsulinModule insulinModule;
+	 private InsulinModule insulinModule;
 
-	 Date time;
-	 double glucose;
-	 double insulin;
-	/**
-	 * 
-	 */
+	 /*
+	  * Keep the actual time.
+	  * Used for computation and as output value to the output views.
+	  */
+	 private Date time;
+	 
+	 /*
+	  * Field for the resulting values after each iteration
+	  */
+	 private double glucose;
+	 private double insulin;
+
 	public Model() {
+		this.foodModule = new FoodModule();
+		this.insulinModule = new InsulinModule();
 	}
 
 	/**
-	 * 
+	 * Add food to simulation.
 	 */
-	 void addFood(AbstractFood name) {
-		
+	 void addFood(AbstractFood food) {
+		 this.foodModule.addFood(food);
 	}
 
 	/**
-	 * 
+	 * Add insulin to simulation.
 	 */
 	 void addInsulin(Insulin insulin) {
-		
+		 this.insulinModule.addInjection(new Injection(insulin, 1));
 	}
 
 	/**
-	 * 
+	 * Set new time, calculate resulting values and notify observers.
 	 */
-	 void setTime(Date name) {
+	 void setTime(Date time) {
+		 /*
+		  * Calculate values..
+		  */
+		 this.time = time;
+		 this.glucose = this.foodModule.calculateOverallGlucose(time);
+		 this.insulin = this.insulinModule.getRelInsulin(time);
+		 
+		 /*
+		  * ..and notify observers.
+		  */
+		 this.setChanged();
+		 this.notifyObservers();
 		
 	}
 

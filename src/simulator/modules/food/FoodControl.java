@@ -50,7 +50,7 @@ public class FoodControl {
 					time++;
 					pause();
 					try {
-						Thread.sleep(170);
+						Thread.sleep(300);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
