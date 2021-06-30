@@ -23,7 +23,7 @@ public class HighGlycemicFood extends AbstractFood {
 	@Override
 	double calculateGlucose(int time) {
 		int localTime = time - this.time;
-		return Math.sin(((double)localTime)/10*this.ammount);
+		return Math.sin(((double)localTime)/this.ammount);
 	}
 
 }

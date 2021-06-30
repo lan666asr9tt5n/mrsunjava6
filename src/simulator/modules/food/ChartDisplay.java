@@ -31,20 +31,20 @@ public class ChartDisplay extends JFrame implements Observer {
 	private static final long serialVersionUID = 1L;
 
 	private FoodModule foodModule;
-
+	
 	/*
 	 * Fields for holding the data for displaying the chart.
 	 */
 	private DefaultXYDataset xyDataset = new DefaultXYDataset();
-	private double[][] series = new double[2][100];
+	private double[][] series = new double[2][24];
 
 	public ChartDisplay(FoodModule foodModule2) {
 		super("Chart Display");
 		foodModule = foodModule2;
 		foodModule.addObserver(this);
 
-		for (int i = 1; i < 100; i++) {
-			series[0][i] = ((double) i) / 10;
+		for (int i = 1; i < 24; i++) {
+			series[0][i] = ((double) i);
 			series[1][i] = .0;
 		}
 		xyDataset.addSeries("Food", series);
@@ -69,8 +69,8 @@ public class ChartDisplay extends JFrame implements Observer {
 		if (arg.getClass().equals(FoodData.class)) {
 			FoodData fD = (FoodData) arg;
 			System.out.println(fD);
-			series[0][fD.getTime() % 100] = ((double) fD.getTime() % 100) / 10;
-			series[1][fD.getTime() % 100] = fD.getGlucose();
+			series[0][fD.getTime() % 24] = ((double) fD.getTime() % 24);
+			series[1][fD.getTime() % 24] = fD.getGlucose();
 			xyDataset.seriesChanged(null);
 		} else {
 			System.out.println("Unknown object of class: "

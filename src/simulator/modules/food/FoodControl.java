@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -44,10 +46,13 @@ public class FoodControl {
 		 */
 		final Thread timeSource = new Thread() {
 			public void run() {
-				int time = 0;
+				Date time = new Date(System.currentTimeMillis());
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(time);
+
 				while (!this.isInterrupted()) {
-					foodModule.calculateOverallGlucose(time);
-					time++;
+					foodModule.calculateOverallGlucose(cal.getTime());
+					cal.add(Calendar.HOUR_OF_DAY, 1);
 					pause();
 					try {
 						Thread.sleep(300);
@@ -101,9 +106,10 @@ public class FoodControl {
 
 		JButton addLowButton = new JButton("Add low glycemic food");
 		frame.add(addLowButton);
-		addLowButton.addActionListener(new ActionListener () {
+		addLowButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
-				foodModule.addFood(new LowGlycemicFood(1, foodModule.getTime()));
+				foodModule
+						.addFood(new LowGlycemicFood(1, foodModule.getTime()));
 			}
 		});
 
