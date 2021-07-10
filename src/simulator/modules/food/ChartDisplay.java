@@ -3,6 +3,9 @@
  */
 package simulator.modules.food;
 
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -11,8 +14,14 @@ import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.DefaultXYDataset;
+import org.jfree.chart.axis.DateAxis;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.time.Minute;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.ui.RectangleInsets;
 
 import simulator.modules.food.FoodModule.FoodData;
 
@@ -31,32 +40,50 @@ public class ChartDisplay extends JFrame implements Observer {
 	private static final long serialVersionUID = 1L;
 
 	private FoodModule foodModule;
-	
-	/*
-	 * Fields for holding the data for displaying the chart.
-	 */
-	private DefaultXYDataset xyDataset = new DefaultXYDataset();
-	private double[][] series = new double[2][24];
+	JFreeChart chart;
+	private TimeSeries glucoseLevel = new TimeSeries("Overall score",
+			Minute.class);
+	private TimeSeriesCollection dataset = new TimeSeriesCollection();
 
 	public ChartDisplay(FoodModule foodModule2) {
 		super("Chart Display");
 		foodModule = foodModule2;
 		foodModule.addObserver(this);
 
-		for (int i = 1; i < 24; i++) {
-			series[0][i] = ((double) i);
-			series[1][i] = .0;
+		chart = ChartFactory.createTimeSeriesChart("Target statistics for ", // title
+				"Date", // x-axis label
+				"", // y-axis label
+				dataset, // data
+				true, // create legend?
+				true, // generate tooltips?
+				false // generate URLs?
+				);
+		dataset.addSeries(this.glucoseLevel);
+
+		chart.setBackgroundPaint(Color.white);
+
+		XYPlot plot = (XYPlot) chart.getPlot();
+		plot.setBackgroundPaint(Color.lightGray);
+		plot.setDomainGridlinePaint(Color.white);
+		plot.setRangeGridlinePaint(Color.white);
+		plot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
+		plot.setDomainCrosshairVisible(true);
+		plot.setRangeCrosshairVisible(true);
+
+		XYItemRenderer r = plot.getRenderer();
+		if (r instanceof XYLineAndShapeRenderer) {
+			XYLineAndShapeRenderer renderer = (XYLineAndShapeRenderer) r;
+			renderer.setBaseShapesVisible(true);
+			renderer.setBaseShapesFilled(true);
 		}
-		xyDataset.addSeries("Food", series);
 
-		JFreeChart lineChart = ChartFactory.createXYLineChart(
-				"Blood glucose level over time", "Time", "Glucose Level",
-				xyDataset, PlotOrientation.VERTICAL, true, true, false);
-		ChartPanel chartPanel = new ChartPanel(lineChart);
+		DateAxis axis = (DateAxis) plot.getDomainAxis();
+		axis.setDateFormatOverride(new SimpleDateFormat("dd-MM-yy"));
 
-		this.add(chartPanel);
-		this.setSize(800, 400);
-		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		ChartPanel cP = new ChartPanel(this.chart);
+		this.add(cP);
+		this.setSize(800,400);
+		this.pack();
 		this.setVisible(true);
 	}
 
@@ -69,9 +96,13 @@ public class ChartDisplay extends JFrame implements Observer {
 		if (arg.getClass().equals(FoodData.class)) {
 			FoodData fD = (FoodData) arg;
 			System.out.println(fD);
-			series[0][fD.getTime() % 24] = ((double) fD.getTime() % 24);
-			series[1][fD.getTime() % 24] = fD.getGlucose();
-			xyDataset.seriesChanged(null);
+
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(fD.getTime());
+			Minute min = new Minute(calendar.getTime());
+			this.glucoseLevel.add(min, fD.getGlucose());
+			dataset.seriesChanged(null);
+			
 		} else {
 			System.out.println("Unknown object of class: "
 					+ arg.getClass().getName());

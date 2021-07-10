@@ -36,8 +36,8 @@ public class FoodModule extends Observable {
 	 * Calculate overall amount of glucose which will be released by all foods
 	 * currently in the module.
 	 */
-	public double calculateOverallGlucose(int time) {
-		this.time = time;
+	public double calculateOverallGlucose(Date time2) {
+		this.time = (int) (time2.getTime()/(1000*60*60));
 		double ret = 0;
 		if (!this.foods.isEmpty()) {
 			List<AbstractFood> removals = new ArrayList<AbstractFood>();
@@ -51,7 +51,7 @@ public class FoodModule extends Observable {
 			this.foods.removeAll(removals);
 		}
 		this.setChanged();
-		this.notifyObservers(new FoodData(this.time, ret));
+		this.notifyObservers(new FoodData(time2, ret));
 		return ret;
 	}
 
@@ -66,10 +66,10 @@ public class FoodModule extends Observable {
 	 * 
 	 */
 	public class FoodData {
-		private int time;
+		private Date time;
 		private double glucose;
 
-		public int getTime() {
+		public Date getTime() {
 			return time;
 		}
 
@@ -77,7 +77,7 @@ public class FoodModule extends Observable {
 			return glucose;
 		}
 
-		public FoodData(int time, double glucose) {
+		public FoodData(Date time, double glucose) {
 			this.time = time;
 			this.glucose = glucose;
 		}
@@ -87,15 +87,4 @@ public class FoodModule extends Observable {
 			return "t:" + this.time + " - g:" + this.glucose;
 		}
 	}
-
-	public double calculateOverallGlucose(Date time2) {
-		/*
-		 * Hack to convert date to int.
-		 * TODO: check if this works well!
-		 * Conversion factor to hours as in the insulin module.
-		 * TODO: Are hours ok for this purpose?
-		 */
-		int time = (int) (time2.getTime()/(1000*60*60));
-		return this.calculateOverallGlucose(time);
-	};
 }
