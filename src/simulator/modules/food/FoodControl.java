@@ -52,7 +52,7 @@ public class FoodControl {
 
 				while (!this.isInterrupted()) {
 					foodModule.calculateOverallGlucose(cal.getTime());
-					cal.add(Calendar.HOUR_OF_DAY, 1);
+					cal.add(Calendar.MINUTE, 15);
 					pause();
 					try {
 						Thread.sleep(300);
@@ -91,7 +91,7 @@ public class FoodControl {
 		addHighButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
 				foodModule
-						.addFood(new HighGlycemicFood(1, foodModule.getTime()));
+						.addFood(new HighGlycemicFood(1, foodModule.getDoubleTime()));
 			}
 		});
 
@@ -100,7 +100,7 @@ public class FoodControl {
 		addMedButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
 				foodModule
-						.addFood(new MedGlycemicFood(1, foodModule.getTime()));
+						.addFood(new MedGlycemicFood(1, foodModule.getDoubleTime()));
 			}
 		});
 
@@ -109,7 +109,7 @@ public class FoodControl {
 		addLowButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
 				foodModule
-						.addFood(new LowGlycemicFood(1, foodModule.getTime()));
+						.addFood(new LowGlycemicFood(1, foodModule.getDoubleTime()));
 			}
 		});
 

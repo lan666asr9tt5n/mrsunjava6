@@ -23,7 +23,8 @@ public class FoodModule extends Observable {
 
 	private List<AbstractFood> foods = new ArrayList<AbstractFood>();
 
-	private int time;
+	private Date time;
+	private double doubleTime;
 
 	/**
 	 * Add foods to module.
@@ -37,13 +38,14 @@ public class FoodModule extends Observable {
 	 * currently in the module.
 	 */
 	public double calculateOverallGlucose(Date time2) {
-		this.time = (int) (time2.getTime()/(1000*60*60));
+		this.time = time2;
+		this.doubleTime = (time2.getTime()/((double) 1000*60*60));
 		double ret = 0;
 		if (!this.foods.isEmpty()) {
 			List<AbstractFood> removals = new ArrayList<AbstractFood>();
 			for (AbstractFood food : this.foods) {
-				if (food.calculateGlucose(time) >= 0) {
-					ret += food.calculateGlucose(time);
+				if (food.calculateGlucose(this.doubleTime) >= 0) {
+					ret += food.calculateGlucose(this.doubleTime);
 				} else {
 					removals.add(food);
 				}
@@ -55,8 +57,12 @@ public class FoodModule extends Observable {
 		return ret;
 	}
 
-	public int getTime() {
+	public Date getTime() {
 		return this.time;
+	}
+	
+	public double getDoubleTime() {
+		return this.doubleTime;
 	}
 
 	/**

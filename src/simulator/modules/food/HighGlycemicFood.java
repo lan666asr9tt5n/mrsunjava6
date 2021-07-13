@@ -13,7 +13,7 @@ public class HighGlycemicFood extends AbstractFood {
 	 * @param ammount
 	 * @param time
 	 */
-	public HighGlycemicFood(int ammount, int time) {
+	public HighGlycemicFood(int ammount, double time) {
 		super(ammount, time);
 	}
 
@@ -21,8 +21,8 @@ public class HighGlycemicFood extends AbstractFood {
 	 * @see simulator.modules.food.AbstractFood#calculateGlucose(int)
 	 */
 	@Override
-	double calculateGlucose(int time) {
-		int localTime = time - this.time;
+	double calculateGlucose(double time) {
+		double localTime = time - this.time;
 		return Math.sin(((double)localTime)/this.ammount);
 	}
 

@@ -13,7 +13,7 @@ public class MedGlycemicFood extends AbstractFood {
 	 * @param ammount
 	 * @param time
 	 */
-	public MedGlycemicFood(int ammount, int time) {
+	public MedGlycemicFood(int ammount, double time) {
 		super(ammount, time);
 		// TODO Auto-generated constructor stub
 	}
@@ -22,8 +22,8 @@ public class MedGlycemicFood extends AbstractFood {
 	 * @see simulator.modules.food.AbstractFood#calculateGlucose(int)
 	 */
 	@Override
-	double calculateGlucose(int time) {
-		int localTime = time - this.time;
+	double calculateGlucose(double time) {
+		double localTime = time - this.time;
 		double quotient = localTime / 3.d;
 		return (quotient < 1) ? quotient : 2 - quotient;  
 	}

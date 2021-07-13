@@ -10,9 +10,9 @@ package simulator.modules.food;
 public abstract class AbstractFood {
 
 	protected int ammount;
-	protected int time;
+	protected double time;
 
-	public AbstractFood(int ammount, int time) {
+	public AbstractFood(int ammount, double time) {
 		this.ammount = ammount;
 		this.time = time;
 		System.out.println(this);
@@ -21,7 +21,7 @@ public abstract class AbstractFood {
 	/**
 	 * Calculate the ammount of glucose released to the blood at a given time.
 	 */
-	abstract double calculateGlucose(int time);
+	abstract double calculateGlucose(double time);
 
 	@Override
 	public String toString(){
