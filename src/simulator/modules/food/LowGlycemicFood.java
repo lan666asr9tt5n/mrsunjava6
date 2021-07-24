@@ -23,8 +23,10 @@ public class LowGlycemicFood extends AbstractFood {
 	 */
 	@Override
 	double calculateGlucose(double time) {
-		// TODO Auto-generated method stub
-		return 0;
+		double localTime = time - this.time;
+		double quotient = localTime / 9.d;
+		if (quotient > 0.7 && quotient < 1.3) return 0.7;
+		return (quotient < 1) ? quotient : 2 - quotient;  
 	}
 
 }

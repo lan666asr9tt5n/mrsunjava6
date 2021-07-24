@@ -24,7 +24,7 @@ public class MedGlycemicFood extends AbstractFood {
 	@Override
 	double calculateGlucose(double time) {
 		double localTime = time - this.time;
-		double quotient = localTime / 3.d;
+		double quotient = localTime / 5.d;
 		return (quotient < 1) ? quotient : 2 - quotient;  
 	}
 
