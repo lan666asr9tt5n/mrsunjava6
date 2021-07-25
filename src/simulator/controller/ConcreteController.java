@@ -3,6 +3,7 @@
  */
 package simulator.controller;
 
+import simulator.model.Model;
 import simulator.modules.food.AbstractFood;
 import simulator.modules.insulin.Insulin;
 
@@ -16,8 +17,8 @@ public class ConcreteController extends AbstractController {
 	/**
 	 * 
 	 */
-	public ConcreteController() {
-		// TODO Auto-generated constructor stub
+	public ConcreteController(Model model2) {
+		super(model2);
 	}
 
 	@Override
@@ -46,6 +47,18 @@ public class ConcreteController extends AbstractController {
 
 	@Override
 	public void unsetPause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void addFood(FoodType foodType) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void addInsulin(InsulinType insulinType) {
 		// TODO Auto-generated method stub
 		
 	}

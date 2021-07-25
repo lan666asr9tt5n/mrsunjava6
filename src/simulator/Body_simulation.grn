@@ -50,6 +50,20 @@
       <y="587"/>
    </type>
    <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.output{GraphicalOutput.java[GraphicalOutput"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.view.output{AbstractOutput.java[AbstractOutput"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.controller{ConcreteController.java[ConcreteController"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.controller{AbstractController.java[AbstractController"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
       <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
       <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.output{AbstractOutput.java[AbstractOutput"/>
       <targetType="=HIS_SCS_InsulinPump/src<simulator.model{Model.java[Model"/>
@@ -64,20 +78,6 @@
       </bendpoints>
    </relationship>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.input{GraphicalInput.java[GraphicalInput"/>
-      <targetType="=HIS_SCS_InsulinPump/src<simulator.view.input{AbstractInput.java[AbstractInput"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_InsulinPump/src<simulator.controller{ConcreteController.java[ConcreteController"/>
-      <targetType="=HIS_SCS_InsulinPump/src<simulator.controller{AbstractController.java[AbstractController"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
       <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
       <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.input{AbstractInput.java[AbstractInput"/>
       <targetType="=HIS_SCS_InsulinPump/src<simulator.controller{AbstractController.java[AbstractController"/>
@@ -86,8 +86,8 @@
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.output{GraphicalOutput.java[GraphicalOutput"/>
-      <targetType="=HIS_SCS_InsulinPump/src<simulator.view.output{AbstractOutput.java[AbstractOutput"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.view.input{GraphicalInput.java[GraphicalInput"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.view.input{AbstractInput.java[AbstractInput"/>
       <bendpoints>
       </bendpoints>
    </relationship>

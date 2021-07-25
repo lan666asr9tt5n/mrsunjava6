@@ -9,7 +9,7 @@ public abstract class AbstractController {
 	public static enum FoodType {HIGH,MED,LOW};
 	public static enum InsulinType {LONG,RAPID,SHORT};
 	
-	private Model model;
+	protected Model model;
 	/**
 	 * 
 	 */
