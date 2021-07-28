@@ -1,205 +1,205 @@
 <uml>
    <greenVersion="30100"/>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{Test.java[Test"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{Test.java[Test"/>
       <height="87"/>
       <width="146"/>
       <x="1073"/>
       <y="484"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
       <height="-1"/>
       <width="-1"/>
       <x="143"/>
       <y="59"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
       <height="-1"/>
       <width="-1"/>
       <x="22"/>
       <y="262"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
       <height="-1"/>
       <width="-1"/>
       <x="133"/>
       <y="354"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
       <height="-1"/>
       <width="-1"/>
       <x="238"/>
       <y="199"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <height="-1"/>
       <width="-1"/>
       <x="521"/>
       <y="32"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
       <height="-1"/>
       <width="-1"/>
       <x="875"/>
       <y="25"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
       <height="-1"/>
       <width="-1"/>
       <x="673"/>
       <y="259"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop["/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop["/>
       <height="-1"/>
       <width="-1"/>
       <x="665"/>
       <y="484"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!2"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!2"/>
       <height="-1"/>
       <width="-1"/>
       <x="297"/>
       <y="545"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!4"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!4"/>
       <height="-1"/>
       <width="-1"/>
       <x="311"/>
       <y="562"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!5"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!5"/>
       <height="-1"/>
       <width="-1"/>
       <x="322"/>
       <y="581"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!3"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!3"/>
       <height="-1"/>
       <width="-1"/>
       <x="334"/>
       <y="597"/>
    </type>
    <type>
-      <name="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!6"/>
+      <name="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!6"/>
       <height="-1"/>
       <width="-1"/>
       <x="347"/>
       <y="614"/>
    </type>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!5"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
       <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!4"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!3"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!5"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!6"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyLPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!6"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{MedGlycemicFood.java[MedGlycemicFood"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
       <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!2"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!2"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!3"/>
       <bendpoints>
       </bendpoints>
    </relationship>
    <relationship>
-      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{ChartDisplay.java[ChartDisplay"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{FoodModule.java[FoodModule"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{HighGlycemicFood.java[HighGlycemicFood"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
-      <bendpoints>
-      </bendpoints>
-   </relationship>
-   <relationship>
-      <class="edu.buffalo.cse.green.relationship.generalization.GeneralizationPart"/>
-      <sourceType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{LowGlycemicFood.java[LowGlycemicFood"/>
-      <targetType="=HIS_SCS_Insulin_Pump/src<simulator.modules.food{AbstractFood.java[AbstractFood"/>
+      <class="edu.buffalo.cse.green.relationship.dependency.DependencyIPart"/>
+      <sourceType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl"/>
+      <targetType="=HIS_SCS_InsulinPump/src<simulator.modules.food{FoodControl.java[FoodControl~workLoop[!4"/>
       <bendpoints>
       </bendpoints>
    </relationship>
