@@ -13,7 +13,7 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 java.lang.Thread timeSource;
+	Thread timeSource;
 	/**
 	 * 
 	 */
@@ -55,6 +55,7 @@ public abstract class AbstractController {
 	 * 
 	 */
 	 abstract void addFood(FoodType foodType);
+	 abstract void addFood(FoodType foodType,long inputTimeSource);	 	 
 	 abstract void addInsulin(InsulinType insulinType);
 
 }
