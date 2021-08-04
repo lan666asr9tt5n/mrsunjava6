@@ -14,7 +14,7 @@ import simulator.model.Model;
  */
 public abstract class AbstractOutput implements Observer {
 
-	private Model model;
+	protected Model model;
 
 	/**
 	 * 

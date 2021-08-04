@@ -24,6 +24,7 @@ public class ConcreteController extends AbstractController {
 		super(model);
 		super.model=new Model();
 		this.timeSource=this.new Timer(new Date());
+		this.timeSource.start();
 	}
 	@Override
 	public void addFood(AbstractFood food) {
@@ -100,7 +101,7 @@ public class ConcreteController extends AbstractController {
 			try {
 				while(true){
 					int delay=ConcreteController.this.delay;
-					this.sleep(delay);
+					Thread.sleep(delay);
 					long t = timer.getTime(); 			 
 					t += delay*60*1000; 			 
 					timer = new Date(t);
