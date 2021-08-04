@@ -45,21 +45,21 @@ public class Model extends Observable {
 	/**
 	 * Add food to simulation.
 	 */
-	 void addFood(AbstractFood food) {
+	 public void addFood(AbstractFood food) {
 		 this.foodModule.addFood(food);
 	}
 
 	/**
 	 * Add insulin to simulation.
 	 */
-	 void addInsulin(Insulin insulin) {
+	 public void addInsulin(Insulin insulin) {
 		 this.insulinModule.addInjection(new Injection(insulin, 1));
 	}
 
 	/**
 	 * Set new time, calculate resulting values and notify observers.
 	 */
-	 void setTime(Date time) {
+	 public void setTime(Date time) {
 		 /*
 		  * Calculate values..
 		  */
