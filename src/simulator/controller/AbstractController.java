@@ -30,22 +30,22 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 abstract void addInsulin(Insulin insulin);
+	public abstract void addInsulin(Insulin insulin);
 
 	/**
 	 * 
 	 */
-	 abstract void setPause();
+	public abstract void setPause();
 
 	/**
 	 * 
 	 */
-	 abstract void unsetPause();
+	public abstract void unsetPause();
 
 	/**
 	 * 
 	 */
-	 abstract void setDelay(int delay);
+	public abstract void setDelay(int delay);
 
 	public AbstractController(Model model2) {
 		model = model2;
@@ -54,8 +54,8 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 abstract void addFood(FoodType foodType);
-	 abstract void addFood(FoodType foodType,long inputTimeSource);	 	 
-	 abstract void addInsulin(InsulinType insulinType);
+	public abstract void addFood(FoodType foodType);
+	public abstract void addFood(FoodType foodType,long inputTimeSource);	 	 
+	public abstract void addInsulin(InsulinType insulinType);
 
 }
