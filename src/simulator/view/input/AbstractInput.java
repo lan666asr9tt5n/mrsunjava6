@@ -11,16 +11,15 @@ import simulator.controller.AbstractController;
  */
 public abstract class AbstractInput {
 
-	protected AbstractController controller;
-
-	public abstract void doInput();
+	public AbstractController controller;
 
 	/**
 	 * 
 	 */
-	public AbstractInput(AbstractController controller) {
-		this.controller = controller;
+	public AbstractInput(AbstractController controller2) {
+		controller = controller2;
 		// TODO Auto-generated constructor stub
 	}
-
+	public AbstractInput() {
+	}
 }
