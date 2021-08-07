@@ -1,5 +1,4 @@
 package simulator.controller;
-import java.util.Calendar;
 import java.util.Date;
 
 import simulator.model.Model;
@@ -26,6 +25,10 @@ public class ConcreteController extends AbstractController {
 		this.timeSource=this.new Timer(new Date());
 		this.timeSource.start();
 	}
+	public ConcreteController() {
+		super.model=new Model();
+		this.timeSource=this.new Timer(new Date());
+	}
 	@Override
 	public void addFood(AbstractFood food) {
 		super.model.addFood(food);		
@@ -39,17 +42,20 @@ public class ConcreteController extends AbstractController {
 		super.delay=delay;		
 	}
 	@Override
-	public void setPause() {
-		// TODO Auto-generated method stub
-		
+	public void setPause(Boolean pause) {
+		this.pause = pause;
+		if (!pause) {
+			synchronized (timeSource) {
+				timeSource.notify();
+			}
+		}		
 	}
 	@Override
-	public void unsetPause() {
-		// TODO Auto-generated method stub
-		
+	public void unsetPause(Boolean pause) {
+	
 	}
 	@Override
-	void addFood(FoodType foodType) {
+	public void addFood(FoodType foodType) {
 		switch(foodType){
 			case HIGH:
 				super.model.addFood(new HighGlycemicFood(1,timeSource.timer.getTime()));
@@ -63,7 +69,7 @@ public class ConcreteController extends AbstractController {
 		}		
 	}
 	@Override
-	void addInsulin(InsulinType insulinType) {
+	public void addInsulin(InsulinType insulinType) {
 		switch(insulinType){
 			case LONG:
 				super.model.addInsulin(new LongActingInsulin());
@@ -77,7 +83,7 @@ public class ConcreteController extends AbstractController {
 		}
 	}
 	@Override	
-	void addFood(FoodType foodType,long inputTimeSource) {
+	public void addFood(FoodType foodType,long inputTimeSource) {
 		switch(foodType){
 			case HIGH:
 				super.model.addFood(new HighGlycemicFood(1,inputTimeSource));
@@ -99,7 +105,7 @@ public class ConcreteController extends AbstractController {
 		}
 		public void run() {
 			try {
-				while(true){
+				while(this.isInterrupted()){
 					int delay=ConcreteController.this.delay;
 					Thread.sleep(delay);
 					long t = timer.getTime(); 			 
@@ -109,5 +115,16 @@ public class ConcreteController extends AbstractController {
 			}catch(Exception ex ){			
 			}			
 		}
+		public void pause() {
+			synchronized (ConcreteController.this) {
+				while (ConcreteController.this.pause) {
+					try {
+						this.wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}		
 	}	
 }

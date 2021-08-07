@@ -30,27 +30,29 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	public abstract void addInsulin(Insulin insulin);
+	 abstract void addInsulin(Insulin insulin);
 
 	/**
 	 * 
 	 */
-	public abstract void setPause();
+	 abstract void setPause(Boolean pause);
 
 	/**
 	 * 
 	 */
-	public abstract void unsetPause();
+	 abstract void unsetPause(Boolean pause);
 
 	/**
 	 * 
 	 */
-	public abstract void setDelay(int delay);
+	 abstract void setDelay(int delay);
 
 	public AbstractController(Model model2) {
 		model = model2;
 	}
+	public AbstractController() {
 
+	}
 	/**
 	 * 
 	 */
