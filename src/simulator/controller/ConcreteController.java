@@ -23,7 +23,6 @@ public class ConcreteController extends AbstractController {
 		super(model);
 		super.model=new Model();
 		this.timeSource=this.new Timer(new Date());
-		this.timeSource.start();
 	}
 	public ConcreteController() {
 		super.model=new Model();

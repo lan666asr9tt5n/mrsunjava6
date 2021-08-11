@@ -1,5 +1,7 @@
 package simulator;
 
+import java.io.IOException;
+
 import simulator.controller.AbstractController;
 import simulator.controller.ConcreteController;
 import simulator.model.Model;
@@ -19,7 +21,12 @@ public class TestDriver {
 		System.out.println("Starting up...");
 		Model mod = new Model();
 		AbstractController contr = new ConcreteController(mod);
-		AbstractInput in = new GraphicalInput(contr);
+		GraphicalInput in = new GraphicalInput(contr);
+		try {
+			in.workLoop();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		AbstractOutput output = new GraphicalOutput(mod);
 		System.out.println("Shuting down...");
 	}
