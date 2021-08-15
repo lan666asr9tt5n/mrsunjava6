@@ -21,13 +21,9 @@ public class ConcreteController extends AbstractController {
 	private Timer timeSource;
 	public ConcreteController(Model model) {
 		super(model);
-		super.model=new Model();
-		this.timeSource=this.new Timer(new Date());
+		this.timeSource=this.new Timer(new Date(System.currentTimeMillis()));
 	}
-	public ConcreteController() {
-		super.model=new Model();
-		this.timeSource=this.new Timer(new Date());
-	}
+
 	@Override
 	public void addFood(AbstractFood food) {
 		super.model.addFood(food);		
@@ -98,18 +94,21 @@ public class ConcreteController extends AbstractController {
 
 	public class Timer extends Thread {
 		public Date timer;
-		Timer(Date timer){
+		public Timer(Date timer){
 			this.timer=timer;
 			this.start();
 		}
+		@Override
 		public void run() {
 			try {
-				while(this.isInterrupted()){
-					int delay=ConcreteController.this.delay;
+				while(true){
+					int delay=300;
 					Thread.sleep(delay);
 					long t = timer.getTime(); 			 
-					t += delay*60*1000; 			 
+					t += 1000*60*5; 			 
 					timer = new Date(t);
+					System.out.println(timer);
+					model.setTime(timer);
 				}	
 			}catch(Exception ex ){			
 			}			

@@ -32,7 +32,7 @@ public class GraphicalOutput extends AbstractOutput {
 
 	private JFrame frame = new JFrame("GUI Output");
 
-	JFreeChart chart;
+	private JFreeChart chart;
 	private TimeSeries glucoseLevel = new TimeSeries("Overall score",
 			Minute.class);
 	private TimeSeriesCollection dataset = new TimeSeriesCollection();
@@ -77,6 +77,9 @@ public class GraphicalOutput extends AbstractOutput {
 		this.frame.setSize(800,400);
 		this.frame.pack();
 		this.frame.setVisible(true);
+		this.frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		
+		this.model.addObserver(this);
 	}
 
 	/* (non-Javadoc)
@@ -84,6 +87,7 @@ public class GraphicalOutput extends AbstractOutput {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+		System.out.println("update");
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(this.model.getTime());
 		Minute min = new Minute(calendar.getTime());

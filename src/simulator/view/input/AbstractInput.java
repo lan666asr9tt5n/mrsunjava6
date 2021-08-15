@@ -22,4 +22,6 @@ public abstract class AbstractInput {
 	}
 	public AbstractInput() {
 	}
+	
+	public abstract void workLoop();
 }

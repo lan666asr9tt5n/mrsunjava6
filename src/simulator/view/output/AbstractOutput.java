@@ -21,7 +21,7 @@ public abstract class AbstractOutput implements Observer {
 	 */
 	public AbstractOutput(Model model2) {
 		model = model2;
-		model.addObserver(this);
+//		model.addObserver(this);
 		// TODO Auto-generated constructor stub
 	}
 

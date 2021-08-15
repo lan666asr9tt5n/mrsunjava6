@@ -4,6 +4,8 @@
 package simulator.model;
 
 import java.util.Observable;
+import java.util.Observer;
+
 import simulator.modules.food.AbstractFood;
 import simulator.modules.insulin.Injection;
 import simulator.modules.insulin.Insulin;
@@ -19,6 +21,9 @@ import simulator.modules.insulin.InsulinModule;
  */
 public class Model extends Observable {
 
+	public static double getDoubleFromDate(Date date){
+		return (date.getTime()/((double) 1000*60*60));
+	}
 	/*
 	 * The single modules which are used to calculate the overall numbers.
 	 */
@@ -71,8 +76,7 @@ public class Model extends Observable {
 		  * ..and notify observers.
 		  */
 		 this.setChanged();
-		 this.notifyObservers();
-		
+		 this.notifyObservers(null);
 	}
 
 	public Date getTime() {
@@ -86,5 +90,4 @@ public class Model extends Observable {
 	public double getInsulin() {
 		return insulin;
 	}
-
 }

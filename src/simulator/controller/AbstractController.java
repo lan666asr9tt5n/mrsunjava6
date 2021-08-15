@@ -35,17 +35,17 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 abstract void setPause(Boolean pause);
+	 public abstract void setPause(Boolean pause);
 
 	/**
 	 * 
 	 */
-	 abstract void unsetPause(Boolean pause);
+	 public abstract void unsetPause(Boolean pause);
 
 	/**
 	 * 
 	 */
-	 abstract void setDelay(int delay);
+	 public abstract void setDelay(int delay);
 
 	public AbstractController(Model model2) {
 		model = model2;

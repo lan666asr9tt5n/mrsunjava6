@@ -21,13 +21,20 @@ public class TestDriver {
 		System.out.println("Starting up...");
 		Model mod = new Model();
 		AbstractController contr = new ConcreteController(mod);
-		GraphicalInput in = new GraphicalInput(contr);
+		AbstractInput in = new GraphicalInput(contr);
+		in.workLoop();
+		
+		AbstractOutput output = new GraphicalOutput(mod);
+		mod.addObserver(output);
+		System.out.println("main: " + mod.countObservers());
+		
+		
 		try {
-			in.workLoop();
-		} catch (IOException e) {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		AbstractOutput output = new GraphicalOutput(mod);
 		System.out.println("Shuting down...");
 	}
 

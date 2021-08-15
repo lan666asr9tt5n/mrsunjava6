@@ -24,19 +24,14 @@ import simulator.modules.food.ChartDisplay;
  */
 public class GraphicalInput extends AbstractInput {
 
-
-	private ConcreteController controller;
 	private ChartDisplay chartDisplay;	
 	private boolean pause = false;
 	
 	public GraphicalInput(AbstractController controller2) {
 		super(controller2);	
-		controller=new ConcreteController();
-	}
-	public GraphicalInput() {
-		controller=new ConcreteController();
 	}	
-	public void workLoop() throws IOException {
+	@Override
+	public void workLoop() {
 		JFrame frame = new JFrame("Food control");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(0, 1, 2, 5));
