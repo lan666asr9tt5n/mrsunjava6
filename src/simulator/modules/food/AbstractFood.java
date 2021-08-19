@@ -3,6 +3,10 @@
  */
 package simulator.modules.food;
 
+import java.util.Date;
+
+import simulator.model.Model;
+
 /**
  * @author rc
  *
@@ -25,6 +29,6 @@ public abstract class AbstractFood {
 
 	@Override
 	public String toString(){
-		return this.getClass().getName() + ":" + this.time + " - " + this.ammount;
+		return this.getClass().getName() + ":" + Model.getDateFromDouble(time) + " - " + this.ammount;
 	}
 }

@@ -24,6 +24,9 @@ public class Model extends Observable {
 	public static double getDoubleFromDate(Date date){
 		return (date.getTime()/((double) 1000*60*60));
 	}
+	public static Date getDateFromDouble(double d){
+		return new Date(((long) d) * ((long)1000*60*60));
+	}
 	/*
 	 * The single modules which are used to calculate the overall numbers.
 	 */

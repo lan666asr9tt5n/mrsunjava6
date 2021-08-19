@@ -81,13 +81,13 @@ public class ConcreteController extends AbstractController {
 	public void addFood(FoodType foodType,long inputTimeSource) {
 		switch(foodType){
 			case HIGH:
-				super.model.addFood(new HighGlycemicFood(1,inputTimeSource));
+				super.model.addFood(new HighGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));
 				break;
 			case MED:
-				super.model.addFood(new MedGlycemicFood(1,inputTimeSource));				
+				super.model.addFood(new MedGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));				
 				break;				
 			case LOW:
-				super.model.addFood(new LowGlycemicFood(1,inputTimeSource));					
+				super.model.addFood(new LowGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));					
 				break;				
 		}		
 	}
@@ -105,7 +105,7 @@ public class ConcreteController extends AbstractController {
 					int delay=300;
 					Thread.sleep(delay);
 					long t = timer.getTime(); 			 
-					t += 1000*60*5; 			 
+					t += (1000*60*10); 			 
 					timer = new Date(t);
 					System.out.println(timer);
 					model.setTime(timer);
