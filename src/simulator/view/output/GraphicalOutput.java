@@ -87,7 +87,6 @@ public class GraphicalOutput extends AbstractOutput {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("update");
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(this.model.getTime());
 		Minute min = new Minute(calendar.getTime());

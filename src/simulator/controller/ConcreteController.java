@@ -51,17 +51,7 @@ public class ConcreteController extends AbstractController {
 	}
 	@Override
 	public void addFood(FoodType foodType) {
-		switch(foodType){
-			case HIGH:
-				super.model.addFood(new HighGlycemicFood(1,timeSource.timer.getTime()));
-				break;
-			case MED:
-				super.model.addFood(new MedGlycemicFood(1,timeSource.timer.getTime()));				
-				break;				
-			case LOW:
-				super.model.addFood(new LowGlycemicFood(1,timeSource.timer.getTime()));					
-				break;				
-		}		
+		this.addFood(foodType, this.timeSource.timer.getTime());
 	}
 	@Override
 	public void addInsulin(InsulinType insulinType) {
@@ -81,13 +71,13 @@ public class ConcreteController extends AbstractController {
 	public void addFood(FoodType foodType,long inputTimeSource) {
 		switch(foodType){
 			case HIGH:
-				super.model.addFood(new HighGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));
+				super.model.addFood(new HighGlycemicFood(1,Model.getDoubleFromDate(new Date(inputTimeSource))));
 				break;
 			case MED:
-				super.model.addFood(new MedGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));				
+				super.model.addFood(new MedGlycemicFood(1,Model.getDoubleFromDate(new Date(inputTimeSource))));				
 				break;				
 			case LOW:
-				super.model.addFood(new LowGlycemicFood(1,Model.getDoubleFromDate(this.timeSource.timer)));					
+				super.model.addFood(new LowGlycemicFood(1,Model.getDoubleFromDate(new Date(inputTimeSource))));					
 				break;				
 		}		
 	}

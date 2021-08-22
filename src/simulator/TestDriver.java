@@ -23,19 +23,7 @@ public class TestDriver {
 		AbstractController contr = new ConcreteController(mod);
 		AbstractInput in = new GraphicalInput(contr);
 		in.workLoop();
-		
 		AbstractOutput output = new GraphicalOutput(mod);
-		mod.addObserver(output);
-		System.out.println("main: " + mod.countObservers());
-		
-		
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Shuting down...");
 	}
 
 }
