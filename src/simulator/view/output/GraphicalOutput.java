@@ -33,7 +33,13 @@ public class GraphicalOutput extends AbstractOutput {
 	private JFrame frame = new JFrame("GUI Output");
 
 	private JFreeChart chart;
-	private TimeSeries glucoseLevel = new TimeSeries("Overall score",
+	private TimeSeries foodGlucoseLevel = new TimeSeries("Food Glucose",
+			Minute.class);
+	private TimeSeries glucoseUpperBound = new TimeSeries("Glucose Upper Bound",
+			Minute.class);
+	private TimeSeries glucoseLowerAbound = new TimeSeries("Glucose Lower Bound",
+			Minute.class);
+	private TimeSeries absoluteGlucoseLevel = new TimeSeries("Absolute Glucose Level",
 			Minute.class);
 	private TimeSeriesCollection dataset = new TimeSeriesCollection();
 	/**
@@ -50,7 +56,10 @@ public class GraphicalOutput extends AbstractOutput {
 				true, // generate tooltips?
 				false // generate URLs?
 				);
-		dataset.addSeries(this.glucoseLevel);
+		dataset.addSeries(this.foodGlucoseLevel);
+		dataset.addSeries(this.absoluteGlucoseLevel);
+		dataset.addSeries(this.glucoseLowerAbound);
+		dataset.addSeries(this.glucoseUpperBound);
 
 		chart.setBackgroundPaint(Color.white);
 
@@ -90,7 +99,10 @@ public class GraphicalOutput extends AbstractOutput {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(this.model.getTime());
 		Minute min = new Minute(calendar.getTime());
-		this.glucoseLevel.add(min, this.model.getGlucose());
+		this.foodGlucoseLevel.add(min, this.model.getFoodGlucose());
+		this.absoluteGlucoseLevel.add(min, this.model.getAbsoluteGlucose());
+		this.glucoseLowerAbound.add(min, Model.glucoseLowerBound);
+		this.glucoseUpperBound.add(min, Model.glucoseUpperBound);
 		dataset.seriesChanged(null);
 	}
 

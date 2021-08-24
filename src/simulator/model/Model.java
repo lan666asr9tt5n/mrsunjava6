@@ -42,8 +42,16 @@ public class Model extends Observable {
 	 /*
 	  * Field for the resulting values after each iteration
 	  */
-	 private double glucose;
+	 private double foodGlucose;
 	 private double insulin;
+	 private double absoluteGlucose;
+	 
+	 public static final double glucoseBaseLevel = 5.5; 
+	 
+	 //TODO: upper bound = 7.5 ok?
+	 public static final double glucoseUpperBound = 7.5;
+	 public static final double glucoseLowerBound = 4.0;
+	 
 
 	public Model() {
 		this.foodModule = new FoodModule();
@@ -72,8 +80,9 @@ public class Model extends Observable {
 		  * Calculate values..
 		  */
 		 this.time = time;
-		 this.glucose = this.foodModule.calculateOverallGlucose(time);
+		 this.foodGlucose = this.foodModule.calculateOverallGlucose(time);
 		 this.insulin = this.insulinModule.getRelInsulin(time);
+		 this.absoluteGlucose = this.foodGlucose + Model.glucoseBaseLevel;
 		 
 		 /*
 		  * ..and notify observers.
@@ -86,8 +95,12 @@ public class Model extends Observable {
 		return time;
 	}
 
-	public double getGlucose() {
-		return glucose;
+	public double getFoodGlucose() {
+		return foodGlucose;
+	}
+	
+	public double getAbsoluteGlucose() {
+		return this.absoluteGlucose;
 	}
 
 	public double getInsulin() {
