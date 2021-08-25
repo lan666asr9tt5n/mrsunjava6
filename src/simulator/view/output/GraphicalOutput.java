@@ -48,7 +48,7 @@ public class GraphicalOutput extends AbstractOutput {
 	public GraphicalOutput(Model model2) {
 		super(model2);
 		
-		chart = ChartFactory.createTimeSeriesChart("Target statistics for ", // title
+		chart = ChartFactory.createTimeSeriesChart("Body Simulation Monitor", // title
 				"Date", // x-axis label
 				"", // y-axis label
 				dataset, // data
