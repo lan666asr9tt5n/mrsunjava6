@@ -1,13 +1,10 @@
 package simulator;
 
-import java.io.IOException;
-
 import simulator.controller.AbstractController;
 import simulator.controller.ConcreteController;
 import simulator.model.Model;
 import simulator.view.input.AbstractInput;
 import simulator.view.input.GraphicalInput;
-import simulator.view.output.AbstractOutput;
 import simulator.view.output.GraphicalOutput;
 
 public class TestDriver {
@@ -21,9 +18,10 @@ public class TestDriver {
 		System.out.println("Starting up...");
 		Model mod = new Model();
 		AbstractController contr = new ConcreteController(mod);
-		AbstractInput in = new GraphicalInput(contr);
+		GraphicalOutput output = new GraphicalOutput(mod);
+		AbstractInput in = new GraphicalInput(contr, output);
 		in.workLoop();
-		AbstractOutput output = new GraphicalOutput(mod);
+
 	}
 
 }

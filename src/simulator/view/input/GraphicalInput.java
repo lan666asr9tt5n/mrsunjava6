@@ -6,16 +6,13 @@ package simulator.view.input;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JToggleButton;
 
 import simulator.controller.AbstractController;
-import simulator.controller.ConcreteController;
-import simulator.modules.food.ChartDisplay;
+import simulator.view.output.GraphicalOutput;
 
 
 /**
@@ -24,17 +21,18 @@ import simulator.modules.food.ChartDisplay;
  */
 public class GraphicalInput extends AbstractInput {
 
-	private ChartDisplay chartDisplay;	
+	private GraphicalOutput graphicalOutput;	
 	private boolean pause = false;
 	
-	public GraphicalInput(AbstractController controller2) {
+	public GraphicalInput(AbstractController controller2, GraphicalOutput gO) {
 		super(controller2);	
+		this.graphicalOutput = gO;
 	}	
 	@Override
 	public void workLoop() {
 		JFrame frame = new JFrame("Food control");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLayout(new GridLayout(0, 1, 2, 5));
+		frame.setLayout(new GridLayout(0, 1, 2, 8));
 
 		JButton addHighButton = new JButton("Add high glycemic food");
 		frame.add(addHighButton);
@@ -59,16 +57,36 @@ public class GraphicalInput extends AbstractInput {
 				controller.addFood(AbstractController.FoodType.LOW);				
 			}
 		});
+		
+		JButton addRapidInsulinButton = new JButton("Add rapid acting insulin");
+		frame.add(addRapidInsulinButton);
+		addRapidInsulinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent aE) {
+				controller.addInsulin(AbstractController.InsulinType.RAPID);				
+			}
+		});
+		
+		JButton addShortInsulinButton = new JButton("Add short acting insulin");
+		frame.add(addShortInsulinButton);
+		addShortInsulinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent aE) {
+				controller.addInsulin(AbstractController.InsulinType.SHORT);				
+			}
+		});
+		
+		JButton addLongInsulinButton = new JButton("Add long acting insulin");
+		frame.add(addLongInsulinButton);
+		addLongInsulinButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent aE) {
+				controller.addInsulin(AbstractController.InsulinType.LONG);				
+			}
+		});
 
 		JToggleButton toggleChartButton = new JToggleButton("Hide chart");
 		frame.add(toggleChartButton);
 		toggleChartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
-				if (chartDisplay.isVisible()) {
-					chartDisplay.setVisible(false);
-				} else {
-					chartDisplay.setVisible(true);
-				}
+				graphicalOutput.toggleVisibility();
 			}
 		});
 

@@ -3,14 +3,13 @@
  */
 package simulator.model;
 
+import java.util.Date;
 import java.util.Observable;
-import java.util.Observer;
 
 import simulator.modules.food.AbstractFood;
+import simulator.modules.food.FoodModule;
 import simulator.modules.insulin.Injection;
 import simulator.modules.insulin.Insulin;
-import java.util.Date;
-import simulator.modules.food.FoodModule;
 import simulator.modules.insulin.InsulinModule;
 
 /**

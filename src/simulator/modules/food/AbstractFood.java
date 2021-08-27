@@ -3,8 +3,6 @@
  */
 package simulator.modules.food;
 
-import java.util.Date;
-
 import simulator.model.Model;
 
 /**
