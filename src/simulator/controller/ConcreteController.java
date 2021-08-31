@@ -114,5 +114,12 @@ public class ConcreteController extends AbstractController {
 				}
 			}
 		}		
+	}
+
+	@Override
+	public void addInsulin(InsulinType insulinType,double amount) {
+		// TODO Auto-generated method stub
+		
 	}	
 }
+

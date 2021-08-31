@@ -59,5 +59,6 @@ public abstract class AbstractController {
 	public abstract void addFood(FoodType foodType);
 	public abstract void addFood(FoodType foodType,long inputTimeSource);	 	 
 	public abstract void addInsulin(InsulinType insulinType);
+	public abstract void addInsulin(InsulinType insulinType,double amount);
 
 }
