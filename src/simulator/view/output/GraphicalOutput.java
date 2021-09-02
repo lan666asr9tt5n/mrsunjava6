@@ -17,7 +17,9 @@ import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.time.Hour;
 import org.jfree.data.time.Minute;
+import org.jfree.data.time.RegularTimePeriod;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.ui.RectangleInsets;
@@ -58,6 +60,13 @@ public class GraphicalOutput extends AbstractOutput {
 				true, // generate tooltips?
 				false // generate URLs?
 				);
+		long mIA = 900;
+		this.foodGlucoseLevel.setMaximumItemAge(mIA);
+		this.absoluteGlucoseLevel.setMaximumItemAge(mIA);
+		this.glucoseLowerAbound.setMaximumItemAge(mIA);
+		this.glucoseUpperBound.setMaximumItemAge(mIA);
+		this.relativeInsulinLevel.setMaximumItemAge(mIA);
+		
 		dataset.addSeries(this.foodGlucoseLevel);
 		dataset.addSeries(this.absoluteGlucoseLevel);
 		dataset.addSeries(this.glucoseLowerAbound);
@@ -82,7 +91,7 @@ public class GraphicalOutput extends AbstractOutput {
 		}
 
 		DateAxis axis = (DateAxis) plot.getDomainAxis();
-		axis.setDateFormatOverride(new SimpleDateFormat("dd-MM-yy"));
+		axis.setDateFormatOverride(new SimpleDateFormat("HH:mm"));
 
 		ChartPanel cP = new ChartPanel(this.chart);
 		this.frame.add(cP);
