@@ -13,12 +13,12 @@ public class CSVWriter {
 		this.output = output;
 	}
 
-	public void toCSV(CSVFile file) throws IOException {
+	public void toCSV(CSVFile file,boolean append) throws IOException {
 		BufferedWriter out = null;
 
 		try {
 			out = new BufferedWriter(
-					new FileWriter(output)
+					new FileWriter(output,append)
 			);
 			file.reset();
 

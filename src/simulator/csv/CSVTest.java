@@ -45,7 +45,7 @@ public class CSVTest {
 				System.out.print(log.next().toString());
 			}
 
-			output.toCSV(log);
+			output.toCSV(log,false);
 			System.out.println("The application will end in approx. 10 seconds!");
 			System.out.println("Please check if the file: " + testFile.getAbsolutePath() + " has been created!");
 			System.out.println("This file will automatically been deleted after application ending!");
