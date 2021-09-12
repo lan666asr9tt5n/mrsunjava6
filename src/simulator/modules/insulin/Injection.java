@@ -33,6 +33,7 @@ public class Injection {
 		
 		result = insulin.getPercent(timelast, timenow) * insulinAmount;
 		
+		lastCalculation = time;
 		return result;
 	}
 	
