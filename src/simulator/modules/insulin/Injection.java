@@ -30,9 +30,11 @@ public class Injection {
 		
 		double timelast = DateDiff(injectionTime, lastCalculation);
 		double timenow = DateDiff(injectionTime, time);
+		//System.out.println(Double.toString(timelast) + '-' + Double.toString(timenow));
+		lastCalculation = time;
 		
 		result = insulin.getPercent(timelast, timenow) * insulinAmount;
-		
+		//System.out.println(result);
 		lastCalculation = time;
 		return result;
 	}

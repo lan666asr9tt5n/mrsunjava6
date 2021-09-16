@@ -19,14 +19,14 @@ public abstract class Insulin{
 		// function to calculate relative insulin
 		double result = 0;
 				
-		if (start < getDuration()){
+		//if (start < getDuration()){
 			start -= startingtime;
 			end -= startingtime;
 			if (start < 0) start = 0;
 			if (end < 0) end = 0;
 			
 			result = calcIntegral(end) - calcIntegral(start);
-		}
+		//}
 		
 		return result;
 	}

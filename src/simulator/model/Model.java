@@ -68,7 +68,7 @@ public class Model extends Observable {
 	 * Add insulin to simulation.
 	 */
 	 public void addInsulin(Insulin insulin) {
-		 this.insulinModule.addInjection(new Injection(insulin, 1));
+		 this.insulinModule.addInjection(new Injection(insulin, time, 180));
 	}
 
 	/**
