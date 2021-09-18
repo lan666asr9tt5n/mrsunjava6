@@ -4,6 +4,8 @@
 package simulator.modules.food;
 
 /**
+ * As low gylcemic food butter beans are assumed.
+ * Serving size is 150g.
  * @author rc
  *
  */
@@ -14,7 +16,7 @@ public class LowGlycemicFood extends AbstractFood {
 	 * @param time
 	 */
 	public LowGlycemicFood(int ammount, double time) {
-		super(ammount, time);
+		super(ammount, time, 20);
 		// TODO Auto-generated constructor stub
 	}
 

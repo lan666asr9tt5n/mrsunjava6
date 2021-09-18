@@ -4,6 +4,8 @@
 package simulator.modules.food;
 
 /**
+ * Simplyfied assumption of a high glycemic food is a softdrink.
+ * Serving unit assumed is 250ml.
  * @author rc
  *
  */
@@ -14,7 +16,7 @@ public class HighGlycemicFood extends AbstractFood {
 	 * @param time
 	 */
 	public HighGlycemicFood(int ammount, double time) {
-		super(ammount, time);
+		super(ammount, time, 26);
 	}
 
 	/* (non-Javadoc)

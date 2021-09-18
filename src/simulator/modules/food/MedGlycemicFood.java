@@ -4,6 +4,8 @@
 package simulator.modules.food;
 
 /**
+ * As med glycemic food spaghetti is assumed.
+ * Serving size is 360g.
  * @author rc
  *
  */
@@ -14,7 +16,7 @@ public class MedGlycemicFood extends AbstractFood {
 	 * @param time
 	 */
 	public MedGlycemicFood(int ammount, double time) {
-		super(ammount, time);
+		super(ammount, time, 48);
 		// TODO Auto-generated constructor stub
 	}
 
