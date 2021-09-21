@@ -52,6 +52,9 @@ private int time, timeOld, interval;
 			}						
 		}
 		
+		if((endCircle * interval) < (time - timeOld)) {
+			this.time = this.timeOld + (endCircle * interval);
+		}
 		return plasmaInsulin;
 		
 	}
