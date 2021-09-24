@@ -11,6 +11,44 @@ The research effort is split into three logical parts:
 Details to the specific part of interest are explained in the following section.
 
 \subsubsection{Diabetes}
+Diabetes mellitus, often referred to simply as diabetes, is a syndrome of disordered metabolism, 
+usually due to a combination of hereditary and environmental causes, resulting in abnormally high blood sugar levels. 
+Blood glucose levels are controlled by a complex interaction of multiple chemicals and hormones in the body, 
+including the hormone insulin made in the beta cells of the pancreas. Diabetes mellitus refers to the group of diseases 
+that lead to high blood glucose levels due to defects in either insulin secretion or insulin action.
+
+There are two known types of diabetes. Our Group decided to cover only diabetes type 1, because injecting of insulin is more common
+in this type of the disease.
+
+\paragraph{Diabetes type 1}
+Type 1 diabetes mellitus is characterized by loss of the insulin-producing beta cells of the islets of Langerhans in the pancreas, leading to a deficiency of insulin. 
+This type of diabetes can be further classified as immune-mediated or idiopathic. The majority of type 1 diabetes is of the immune-mediated variety, where beta cell loss is a T-cell mediated autoimmune attack.
+There is no known preventive measure which can be taken against type 1 diabetes; it is about 10% of diabetes mellitus cases in North America and Europe (though this varies by geographical location), and is a higher percentage in some other areas. 
+Most affected people are otherwise healthy and of a healthy weight when onset occurs. Sensitivity and responsiveness to insulin are usually normal, especially in the early stages. 
+Type 1 diabetes can affect children or adults but was traditionally termed "juvenile diabetes" because it represents a majority of the diabetes cases in children.
+
+The principal treatment of type 1 diabetes, even in its earliest stages, is the delivery of artificial insulin via injection combined with careful monitoring of blood glucose levels using blood testing monitors. 
+Without insulin, diabetic ketoacidosis often develops which may result in coma or death. Treatment emphasis is now also placed on lifestyle adjustments (diet and exercise) though these cannot reverse the progress of the disease. 
+Apart from the common subcutaneous injections, it is also possible to deliver insulin by a pump, which allows continuous infusion of insulin 24 hours a day at preset levels, and the ability to program doses (a bolus) of insulin as needed at meal times. 
+An inhaled form of insulin was approved by the FDA in January 2006, although it was discontinued for business reasons in October 2007. [9][10] Non-insulin treatments, such as monoclonal antibodies and stem-cell based therapies, 
+are effective in animal models but have not yet completed clinical trials in humans.
+
+Type 1 treatment must be continued indefinitely in essentially all cases. Treatment need not significantly impair normal activities, if sufficient patient training, awareness, appropriate care, discipline in testing and dosing of insulin is taken. 
+However, treatment is burdensome for patients, insulin is replaced in a non-physiological manner, and this approach is therefore far from ideal. The average glucose level for the type 1 patient should be as close to normal (80–120 mg/dl, 4–6 mmol/l) as is safely possible. 
+Some physicians suggest up to 140–150 mg/dl (7-7.5 mmol/l) for those having trouble with lower values, such as frequent hypoglycemic events. Values above 400 mg/dl (20 mmol/l) is sometimes accompanied by discomfort and frequent urination leading to dehydration. 
+Values above 600 mg/dl (30 mmol/l) usually require medical treatment and may lead to ketoacidosis, although they are not immediately life-threatening. However, low levels of blood glucose, called hypoglycemia, may lead to seizures or episodes of unconsciousness and absolutely must be treated immediately, 
+via emergency high-glucose gell placed in the patient's mouth or an injection of glucagon.
+
+\paragraph{Simulation}
+The diabetes module needs to simulate the insulin production of an ill pancreas. 
+As an indicator the module needs the amount of carbonate in the stomach and the time of calculation.
+
+\paragraph{Formulas}
+The calculation of absorbed insulin at a time is controlled by intervals. The pancreas produces insulin in intervals from 3-6min.
+If the diabetes module indicates some new carbonates in the stomach, the total amount of needed insulin is calculated.
+For 1 unit of carbonate we need 1/12 unit of insulin (#Beril/Murat: pls look for correct units). Than a square function is calculated, which covers the amount of insulin needed.
+
+
 
 \subsubsection{Food}
 There are two major "indexes" which try to relate the type of food to the foods effect on the blood sugar level (glucose level).
