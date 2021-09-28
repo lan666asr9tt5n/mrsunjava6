@@ -1,8 +1,10 @@
 package simulator.modules.diabetes;
+import java.util.Date;
 
 public class Diabetes {
 private float carbOld, carbNew, carbWorked, minAmount;
-private int time, timeOld, interval;
+private int interval;
+private Date time, timeOld;
 
 	public void setCarbNew(float newC) {
 		
@@ -15,19 +17,19 @@ private int time, timeOld, interval;
 
 
 
-	public void setTime(int newTime) {
-		timeOld = this.time;
-		this.time = newTime;
+	public void setTime(Date newTime) {
+		this.timeOld.setTime(time.getTime());
+		this.time.setTime(newTime.getTime());
 		
 	}
 
 	public Diabetes(){
+		this.time = new Date();
+		this.timeOld = new Date();
 		this.setCarbNew(0);
-		this.setTime(0);
 		this.carbOld = 0;
 		this.carbWorked = 0;
-		this.timeOld = 0;
-		this.interval = 3;
+		this.interval = 3000;
 		this.minAmount = 0.1f;
 	}
 	
@@ -35,7 +37,7 @@ private int time, timeOld, interval;
 		float circles, plasmaInsulin = 0, minInsulinPerInterval ;
 		
 		
-		circles = (time - timeOld)/interval;
+		circles = (time.getTime() - timeOld.getTime())/interval;
 		int endCircle = (int) Math.floor(circles);
 		
 		minInsulinPerInterval = minAmount /(60 / interval);
@@ -52,8 +54,8 @@ private int time, timeOld, interval;
 			}						
 		}
 		
-		if((endCircle * interval) < (time - timeOld)) {
-			this.time = this.timeOld + (endCircle * interval);
+		if((endCircle * interval) < (time.getTime() - timeOld.getTime())) {
+			this.time.setTime(this.timeOld.getTime() + (endCircle * interval));
 		}
 		return plasmaInsulin;
 		
