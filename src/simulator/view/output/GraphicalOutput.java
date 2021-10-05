@@ -45,6 +45,8 @@ public class GraphicalOutput extends AbstractOutput {
 			Minute.class);
 	private TimeSeries relativeInsulinLevel = new TimeSeries("Relative Insulin Level",
 			Minute.class);
+	private TimeSeries bodyInsulinLevel = new TimeSeries("Body Insulin Level",
+			Minute.class);
 	private TimeSeriesCollection dataset = new TimeSeriesCollection();
 	/**
 	 * @param model2
@@ -66,12 +68,14 @@ public class GraphicalOutput extends AbstractOutput {
 		this.glucoseLowerAbound.setMaximumItemAge(mIA);
 		this.glucoseUpperBound.setMaximumItemAge(mIA);
 		this.relativeInsulinLevel.setMaximumItemAge(mIA);
+		this.bodyInsulinLevel.setMaximumItemAge(mIA);
 		
 		dataset.addSeries(this.foodGlucoseLevel);
 		dataset.addSeries(this.absoluteGlucoseLevel);
 		dataset.addSeries(this.glucoseLowerAbound);
 		dataset.addSeries(this.glucoseUpperBound);
 		dataset.addSeries(this.relativeInsulinLevel);
+		dataset.addSeries(this.bodyInsulinLevel);
 
 		chart.setBackgroundPaint(Color.white);
 
@@ -116,6 +120,7 @@ public class GraphicalOutput extends AbstractOutput {
 		this.glucoseLowerAbound.add(min, Model.glucoseLowerBound);
 		this.glucoseUpperBound.add(min, Model.glucoseUpperBound);
 		this.relativeInsulinLevel.add(min, this.model.getInsulin());
+		this.bodyInsulinLevel.add(min, this.model.getBodyInsulin());
 		dataset.seriesChanged(null);
 	}
 

@@ -6,6 +6,7 @@ package simulator.model;
 import java.util.Date;
 import java.util.Observable;
 
+import simulator.modules.diabetes.Diabetes;
 import simulator.modules.food.AbstractFood;
 import simulator.modules.food.FoodModule;
 import simulator.modules.insulin.Injection;
@@ -31,12 +32,13 @@ public class Model extends Observable {
 	 */
 	 private FoodModule foodModule;
 	 private InsulinModule insulinModule;
+	 private Diabetes diabetesModule;
 
 	 /*
 	  * Keep the actual time.
 	  * Used for computation and as output value to the output views.
 	  */
-	 private Date time;
+	 private Date time = null;
 	 
 	 /*
 	  * Field for the resulting values after each iteration
@@ -44,8 +46,12 @@ public class Model extends Observable {
 	 private double foodGlucose;
 	 private double insulin;
 	 private double absoluteGlucose;
+	 private double bodyInsulin;
 	 
-	 public static final double glucoseBaseLevel = 5.5; 
+	 public double getBodyInsulin() {
+		return bodyInsulin;
+	}
+	public static final double glucoseBaseLevel = 5.5; 
 	 
 	 //TODO: upper bound = 7.5 ok?
 	 public static final double glucoseUpperBound = 7.5;
@@ -62,6 +68,7 @@ public class Model extends Observable {
 	 */
 	 public void addFood(AbstractFood food) {
 		 this.foodModule.addFood(food);
+		 this.diabetesModule.setCarbNew(food.getCarboHydrates());
 	}
 
 	/**
@@ -75,6 +82,11 @@ public class Model extends Observable {
 	 * Set new time, calculate resulting values and notify observers.
 	 */
 	 public void setTime(Date time) {
+		 
+		 if (this.time == null) {
+			 this.diabetesModule = new Diabetes(time);
+		 }
+		 
 		 /*
 		  * Calculate values..
 		  */
@@ -82,6 +94,8 @@ public class Model extends Observable {
 		 this.foodGlucose = this.foodModule.calculateOverallGlucose(time);
 		 this.insulin = this.insulinModule.getRelInsulin(time);
 		 this.absoluteGlucose = this.foodGlucose + Model.glucoseBaseLevel;
+		 this.diabetesModule.setTime(time);
+		 this.bodyInsulin = this.diabetesModule.getInsulin();
 		 
 		 /*
 		  * ..and notify observers.

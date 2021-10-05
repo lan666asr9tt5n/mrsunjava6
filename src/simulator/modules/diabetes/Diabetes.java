@@ -23,9 +23,9 @@ private Date time, timeOld;
 		
 	}
 
-	public Diabetes(long initialDate){
-		this.time = new Date(initialDate);
-		this.timeOld = new Date(initialDate);
+	public Diabetes(Date initialDate){
+		this.time = initialDate;
+		this.timeOld = initialDate;
 		this.setCarbNew(0);
 		this.carbOld = 0;
 		this.carbWorked = 0;
