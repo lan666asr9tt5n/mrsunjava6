@@ -34,10 +34,10 @@ An inhaled form of insulin was approved by the FDA in January 2006, although it 
 are effective in animal models but have not yet completed clinical trials in humans.
 
 Type 1 treatment must be continued indefinitely in essentially all cases. Treatment need not significantly impair normal activities, if sufficient patient training, awareness, appropriate care, discipline in testing and dosing of insulin is taken. 
-However, treatment is burdensome for patients, insulin is replaced in a non-physiological manner, and this approach is therefore far from ideal. The average glucose level for the type 1 patient should be as close to normal (80–120 mg/dl, 4–6 mmol/l) as is safely possible. 
-Some physicians suggest up to 140–150 mg/dl (7-7.5 mmol/l) for those having trouble with lower values, such as frequent hypoglycemic events. Values above 400 mg/dl (20 mmol/l) is sometimes accompanied by discomfort and frequent urination leading to dehydration. 
-Values above 600 mg/dl (30 mmol/l) usually require medical treatment and may lead to ketoacidosis, although they are not immediately life-threatening. However, low levels of blood glucose, called hypoglycemia, may lead to seizures or episodes of unconsciousness and absolutely must be treated immediately, 
-via emergency high-glucose gell placed in the patient's mouth or an injection of glucagon.
+However, treatment is burdensome for patients, insulin is replaced in a
+non-physiological manner, and this approach is therefore far from ideal. The
+average glucose level for the type 1 patient should be as close to normal
+(80-120 mg/dl, 4-6 mmol/l) as is safely possible. Some physicians suggest up to 140-150 mg/dl (7-7.5 mmol/l) for those having trouble with lower values, such as frequent hypoglycemic events. Values above 400 mg/dl (20 mmol/l) is sometimes accompanied by discomfort and frequent urination leading to dehydration. Values above 600 mg/dl (30 mmol/l) usually require medical treatment and may lead to ketoacidosis, although they are not immediately life-threatening. However, low levels of blood glucose, called hypoglycemia, may lead to seizures or episodes of unconsciousness and absolutely must be treated immediately, via emergency high-glucose gell placed in the patient's mouth or an injection of glucagon.
 
 \paragraph{Simulation}
 The diabetes module needs to simulate the insulin production of an ill pancreas. 
@@ -46,7 +46,8 @@ As an indicator the module needs the amount of carbonate in the stomach and the 
 \paragraph{Formulas}
 The calculation of absorbed insulin at a time is controlled by intervals. The pancreas produces insulin in intervals from 3-6min.
 If the diabetes module indicates some new carbonates in the stomach, the total amount of needed insulin is calculated.
-For 1 unit of carbonate we need 1/12 unit of insulin (#Beril/Murat: pls look for correct units). Than a square function is calculated, which covers the amount of insulin needed.
+For 1 unit of carbonate we need 1/12 unit of insulin (\#Beril/Murat: pls look
+for correct units). Than a square function is calculated, which covers the amount of insulin needed.
 
 
 
