@@ -43,9 +43,13 @@ public class GraphicalOutput extends AbstractOutput {
 			Minute.class);
 	private TimeSeries absoluteGlucoseLevel = new TimeSeries("Absolute Glucose Level",
 			Minute.class);
-	private TimeSeries relativeInsulinLevel = new TimeSeries("Relative Insulin Level",
+	private TimeSeries relativeInsulinLevel = new TimeSeries("Injected Insulin Level",
 			Minute.class);
-	private TimeSeries bodyInsulinLevel = new TimeSeries("Body Insulin Level",
+	private TimeSeries diabetesInsulinLevel = new TimeSeries("Diabetes Insulin Level",
+			Minute.class);
+	private TimeSeries overallInsulinLevel = new TimeSeries("Overall Insulin Level",
+			Minute.class);
+	private TimeSeries absorbedGlucoseLevel = new TimeSeries("Absorbed Glucose Level",
 			Minute.class);
 	private TimeSeriesCollection dataset = new TimeSeriesCollection();
 	/**
@@ -68,14 +72,18 @@ public class GraphicalOutput extends AbstractOutput {
 		this.glucoseLowerAbound.setMaximumItemAge(mIA);
 		this.glucoseUpperBound.setMaximumItemAge(mIA);
 		this.relativeInsulinLevel.setMaximumItemAge(mIA);
-		this.bodyInsulinLevel.setMaximumItemAge(mIA);
+		this.diabetesInsulinLevel.setMaximumItemAge(mIA);
+		this.overallInsulinLevel.setMaximumItemAge(mIA);
+		this.absorbedGlucoseLevel.setMaximumItemAge(mIA);
 		
 		dataset.addSeries(this.foodGlucoseLevel);
 		dataset.addSeries(this.absoluteGlucoseLevel);
 		dataset.addSeries(this.glucoseLowerAbound);
 		dataset.addSeries(this.glucoseUpperBound);
 		dataset.addSeries(this.relativeInsulinLevel);
-		dataset.addSeries(this.bodyInsulinLevel);
+		dataset.addSeries(this.diabetesInsulinLevel);
+		dataset.addSeries(this.overallInsulinLevel);
+		dataset.addSeries(this.absorbedGlucoseLevel);
 
 		chart.setBackgroundPaint(Color.white);
 
@@ -119,8 +127,10 @@ public class GraphicalOutput extends AbstractOutput {
 		this.absoluteGlucoseLevel.add(min, this.model.getAbsoluteGlucose());
 		this.glucoseLowerAbound.add(min, Model.glucoseLowerBound);
 		this.glucoseUpperBound.add(min, Model.glucoseUpperBound);
-		this.relativeInsulinLevel.add(min, this.model.getInsulin());
-		this.bodyInsulinLevel.add(min, this.model.getBodyInsulin());
+		this.relativeInsulinLevel.add(min, this.model.getInjectedInsulin());
+		this.diabetesInsulinLevel.add(min, this.model.getDiabetesInsulin());
+		this.overallInsulinLevel.add(min, this.model.getOverallInsulin());
+		this.absorbedGlucoseLevel.add(min, this.model.getAbsorbedGlucose());
 		dataset.seriesChanged(null);
 	}
 

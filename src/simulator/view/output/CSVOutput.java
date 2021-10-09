@@ -38,7 +38,7 @@ public class CSVOutput extends AbstractOutput {
 
 			row.add(super.model.getTime().toString());
 			row.add(String.valueOf(super.model.getAbsoluteGlucose()));
-			row.add(String.valueOf(super.model.getInsulin()));
+			row.add(String.valueOf(super.model.getInjectedInsulin()));
 
 			this.log.addRow(row);
 
