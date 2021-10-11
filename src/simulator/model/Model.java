@@ -52,10 +52,6 @@ public class Model extends Observable {
 	private double absorbedGlucose;
 	private double overallInsulin;
 
-	public double getDiabetesInsulin() {
-		return diabetesInsulin;
-	}
-
 	public static final double glucoseBaseLevel = 5.5;
 
 	// TODO: upper bound = 7.5 ok?
@@ -88,7 +84,7 @@ public class Model extends Observable {
 	public void setTime(Date time) {
 
 		if (this.time == null) {
-			this.diabetesModule = new Diabetes(time);
+			this.diabetesModule = new Diabetes(new Date (time.getTime()));
 		}
 
 		/*
@@ -130,7 +126,10 @@ public class Model extends Observable {
 		return absorbedGlucose;
 	}
 	
-
+	public double getDiabetesInsulin() {
+		return diabetesInsulin;
+	}
+	
 	public double getOverallInsulin() {
 		return overallInsulin;
 	}
