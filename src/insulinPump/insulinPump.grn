@@ -1,4 +1,46 @@
 <uml>
    <greenVersion="30100"/>
+   <type>
+      <name="=HIS_SCS_Insulin_Pump/src<insulinPump.sensor{BasicSensor.java[BasicSensor"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="32"/>
+      <y="118"/>
+   </type>
+   <type>
+      <name="=HIS_SCS_Insulin_Pump/src<insulinPump.injector{BasicInjector.java[BasicInjector"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="467"/>
+      <y="124"/>
+   </type>
+   <type>
+      <name="=HIS_SCS_Insulin_Pump/src<insulinPump.logic{BasicLogic.java[BasicLogic"/>
+      <height="-1"/>
+      <width="-1"/>
+      <x="196"/>
+      <y="358"/>
+   </type>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_Insulin_Pump/src<insulinPump.logic{BasicLogic.java[BasicLogic"/>
+      <targetType="=HIS_SCS_Insulin_Pump/src<insulinPump.sensor{BasicSensor.java[BasicSensor"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_Insulin_Pump/src<insulinPump.logic{BasicLogic.java[BasicLogic"/>
+      <targetType="=HIS_SCS_Insulin_Pump/src<insulinPump.injector{BasicInjector.java[BasicInjector"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
+   <relationship>
+      <class="edu.buffalo.cse.green.relationship.association.AssociationPart"/>
+      <sourceType="=HIS_SCS_Insulin_Pump/src<insulinPump.sensor{BasicSensor.java[BasicSensor"/>
+      <targetType="=HIS_SCS_Insulin_Pump/src<insulinPump.logic{BasicLogic.java[BasicLogic"/>
+      <bendpoints>
+      </bendpoints>
+   </relationship>
 </uml>
 

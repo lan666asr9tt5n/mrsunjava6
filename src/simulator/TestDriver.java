@@ -1,5 +1,8 @@
 package simulator;
 
+import insulinPump.injector.BasicInjector;
+import insulinPump.logic.BasicLogic;
+import insulinPump.sensor.BasicSensor;
 import simulator.controller.AbstractController;
 import simulator.controller.ConcreteController;
 import simulator.model.Model;
@@ -20,6 +23,10 @@ public class TestDriver {
 		AbstractController contr = new ConcreteController(mod);
 		GraphicalOutput output = new GraphicalOutput(mod);
 		AbstractInput in = new GraphicalInput(contr, output);
+		
+		BasicInjector injector = new BasicInjector(contr);
+		BasicLogic logic = new BasicLogic(injector);
+		BasicSensor sensor = new BasicSensor(mod,logic);
 		in.workLoop();
 
 	}
