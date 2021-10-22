@@ -96,7 +96,7 @@ public class Model extends Observable {
 		this.diabetesModule.setTime(time);
 		this.diabetesInsulin = this.diabetesModule.getInsulin();
 
-		this.absorbedGlucose = this.injectedInsulin + this.diabetesInsulin;
+		this.absorbedGlucose = (this.injectedInsulin + this.diabetesInsulin)*0.25;
 		this.absoluteGlucose = this.foodGlucose + Model.glucoseBaseLevel - this.absorbedGlucose;
 
 		/*
