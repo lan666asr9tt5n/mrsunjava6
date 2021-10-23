@@ -19,6 +19,8 @@ public class ConcreteController extends AbstractController {
 	 * 
 	 */
 	private Timer timeSource;
+	private boolean debug = false;
+	
 	public ConcreteController(Model model) {
 		super(model);
 		this.timeSource=this.new Timer(new Date(System.currentTimeMillis()));
@@ -97,7 +99,9 @@ public class ConcreteController extends AbstractController {
 					long t = timer.getTime(); 			 
 					t += (1000*60*10); 			 
 					timer = new Date(t);
-					System.out.println(timer);
+					if (debug) {
+						System.out.println(timer);
+					}
 					model.setTime(timer);
 				}	
 			}catch(Exception ex ){			
