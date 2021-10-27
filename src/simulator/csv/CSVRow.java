@@ -51,7 +51,7 @@ public class CSVRow extends Vector<String> {
 		boolean res = false;
 
 		try {
-			Integer.parseInt(s);
+			Double.parseDouble(s);
 			res = true;
 		} catch(NumberFormatException e) {
 			res = false;

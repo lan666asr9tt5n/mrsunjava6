@@ -27,8 +27,8 @@ public class TestDriver {
 		BasicInjector injector = new BasicInjector(contr);
 		BasicLogic logic = new BasicLogic(injector);
 		BasicSensor sensor = new BasicSensor(mod,logic);
+		new CSVOutput(mod,new File("testOutput.csv"),true);
 		in.workLoop();
-
 	}
 
 }
