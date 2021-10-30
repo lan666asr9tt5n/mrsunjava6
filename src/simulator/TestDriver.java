@@ -1,5 +1,7 @@
 package simulator;
 
+import java.io.File;
+
 import insulinPump.injector.BasicInjector;
 import insulinPump.logic.BasicLogic;
 import insulinPump.sensor.BasicSensor;
@@ -8,6 +10,7 @@ import simulator.controller.ConcreteController;
 import simulator.model.Model;
 import simulator.view.input.AbstractInput;
 import simulator.view.input.GraphicalInput;
+import simulator.view.output.CSVOutput;
 import simulator.view.output.GraphicalOutput;
 
 public class TestDriver {
