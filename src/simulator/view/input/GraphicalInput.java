@@ -30,7 +30,7 @@ public class GraphicalInput extends AbstractInput {
 	}	
 	@Override
 	public void workLoop() {
-		JFrame frame = new JFrame("Food control");
+		JFrame frame = new JFrame("Simulation control");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(0, 1, 2, 8));
 

@@ -32,7 +32,7 @@ import simulator.model.Model;
  */
 public class GraphicalOutput extends AbstractOutput {
 
-	private JFrame frame = new JFrame("GUI Output");
+	private JFrame frame = new JFrame("Simulation Output");
 
 	private JFreeChart chart;
 	private TimeSeries foodGlucoseLevel = new TimeSeries("Food Glucose",
