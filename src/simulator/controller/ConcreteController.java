@@ -23,6 +23,7 @@ public class ConcreteController extends AbstractController {
 	
 	public ConcreteController(Model model) {
 		super(model);
+		this.pause=false;
 		this.timeSource=this.new Timer(new Date(System.currentTimeMillis()));
 	}
 
@@ -39,9 +40,9 @@ public class ConcreteController extends AbstractController {
 		super.delay=delay;		
 	}
 	@Override
-	public void setPause(Boolean pause) {
-		this.pause = pause;
-		if (!pause) {
+	public void setPause() {
+		this.pause = !this.pause;
+		if (!this.pause) {
 			synchronized (timeSource) {
 				timeSource.notify();
 			}
@@ -103,12 +104,13 @@ public class ConcreteController extends AbstractController {
 						System.out.println(timer);
 					}
 					model.setTime(timer);
+					this.pause();
 				}	
 			}catch(Exception ex ){			
 			}			
 		}
 		public void pause() {
-			synchronized (ConcreteController.this) {
+			synchronized (this) {
 				while (ConcreteController.this.pause) {
 					try {
 						this.wait();

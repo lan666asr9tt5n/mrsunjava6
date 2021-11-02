@@ -22,7 +22,6 @@ import simulator.view.output.GraphicalOutput;
 public class GraphicalInput extends AbstractInput {
 
 	private GraphicalOutput graphicalOutput;	
-	private boolean pause = false;
 	
 	public GraphicalInput(AbstractController controller2, GraphicalOutput gO) {
 		super(controller2);	
@@ -94,7 +93,7 @@ public class GraphicalInput extends AbstractInput {
 		frame.add(togglePauseButton);
 		togglePauseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent aE) {
-				controller.setPause(pause);
+				controller.setPause();
 			}
 		});
 

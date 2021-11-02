@@ -17,7 +17,7 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 java.lang.Boolean pause;
+	 java.lang.Boolean pause=false;
 	/**
 	 * 
 	 */
@@ -35,7 +35,7 @@ public abstract class AbstractController {
 	/**
 	 * 
 	 */
-	 public abstract void setPause(Boolean pause);
+	 public abstract void setPause();
 
 	/**
 	 * 
