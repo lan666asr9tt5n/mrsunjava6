@@ -37,7 +37,16 @@ Type 1 treatment must be continued indefinitely in essentially all cases. Treatm
 However, treatment is burdensome for patients, insulin is replaced in a
 non-physiological manner, and this approach is therefore far from ideal. The
 average glucose level for the type 1 patient should be as close to normal
-(80-120 mg/dl, 4-6 mmol/l) as is safely possible. Some physicians suggest up to 140-150 mg/dl (7-7.5 mmol/l) for those having trouble with lower values, such as frequent hypoglycemic events. Values above 400 mg/dl (20 mmol/l) is sometimes accompanied by discomfort and frequent urination leading to dehydration. Values above 600 mg/dl (30 mmol/l) usually require medical treatment and may lead to ketoacidosis, although they are not immediately life-threatening. However, low levels of blood glucose, called hypoglycemia, may lead to seizures or episodes of unconsciousness and absolutely must be treated immediately, via emergency high-glucose gell placed in the patient's mouth or an injection of glucagon.
+(80-120 mg/dl, 4-6 mmol/l) as is safely possible. Some physicians suggest up to
+140-150 mg/dl (7-7.5 mmol/l) for those having trouble with lower values, such
+as frequent hypoglycemic events. Values above 400 mg/dl (20 mmol/l) is
+sometimes accompanied by discomfort and frequent urination leading to
+dehydration. Values above 600 mg/dl (30 mmol/l) usually require medical
+treatment and may lead to ketoacidosis, although they are not immediately
+life-threatening. However, low levels of blood glucose, called hypoglycemia,
+may lead to seizures or episodes of unconsciousness and absolutely must be
+treated immediately, via emergency high-glucose gell placed in the patient's
+mouth or an injection of glucagon.
 
 \paragraph{Simulation}
 The diabetes module needs to simulate the insulin production of an ill pancreas. 
@@ -49,8 +58,7 @@ If the diabetes module indicates some new carbonates in the stomach, the total a
 For 1 unit of carbonate we need 1/12 unit of insulin (\#Beril/Murat: pls look
 for correct units). Than a square function is calculated, which covers the amount of insulin needed.
 
-
-
+\newpage
 \subsubsection{Food}
 There are two major "indexes" which try to relate the type of food to the foods effect on the blood sugar level (glucose level).
 The first such index is the so called "Glycemic Index" (GI) the second one the "Glycemic Load" (GL).
@@ -85,41 +93,47 @@ Fortunately at least rough estimates can be made according to the absorbtion of
 glucose in the blood as there exists a table which associates different foods
 with theire behavior according to CI, CL etc. \cite{glycemicindex:table}.
 
+\newpage
 \paragraph{Formulas}
 So far two formulas have been evaluated.
 Formula a (see figure \vref{fig:food_function_a}) has no skew and therefore is
-symmetric. \begin{figure}[htb]
+symmetric. 
+
+\begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{images/food_function_a}
+\includegraphics[scale=0.4]{images/food_function_a}
 \caption{Food Function A}
 \label{fig:food_function_a}
 \end{figure}
+
 Formula b (see figure \vref{fig:food_function_b}) has a skew to the right. I.e.
 it increases "slowly" two some point from which on it falls very abruptly. 
+
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{images/food_function_b}
+\includegraphics[scale=0.4]{images/food_function_b}
 \caption{Food Function B}
 \label{fig:food_function_b}
 \end{figure}
-These formulas are attached with some sample data as Openoffice spread sheets under attachments.
 
+\newpage
 \paragraph{Implementation}
 In order to make it more flexible to choose different algorithms / formulas for
 calculating the glucose values the Strategy pattern might be choosen. One
 critical question with respect to the implementation is the choice of the used
 data types for floatingpoint data as these data types are not guaranteed to be precise.
 
+\newpage
 \subsubsection{Insulin}
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{images/Insulincrystals.jpg}
+\includegraphics[scale=0.4]{images/Insulincrystals.jpg}
 \caption{Insulin crystals}
 \end{figure}
 Insulin is a hormone, which is produced in the beta-cells of the pancreas and it's essential for humans and animals. 
 Taking of insulin causes decreasing of the blood glucose level and consuming glucagon or energy source. 
 Glucagon and some other hormones (e.g. adrenaline, cortisone and pancreas hormones) will increase the blood glucose level.\\
-\newpage
+
 In addition some other properties:
 \begin{itemize}
   \item after ingestion of carbohydrates the blood glucose level will be increased, 
