@@ -36,6 +36,7 @@ The resulting class diagram is as follows (see
 
 \newpage
 \subsection{Body Simulation}
+\label{sec:body_simulation}
 For implementing the body simulation and putting all the behavioral modules
 together while still providing large flexibility for further extensions and
 changes the Model View Controller paradigm is used (see figure
@@ -62,16 +63,3 @@ The resulting class design is as follows  (see figure
 \label{fig:body_simulation_class_diagram}
 \end{figure}
 \end{landscape}
-
-\newpage
-\subsection{Insulin Pump}
-Thanks to the very open and felxible implementation of the Body Simulation
-following the Model View Controller paradigm, the sensor and injector components
-of the Insulin pump can be very easily integrated into the model.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.39]{images/mvc_insulin_pump}
-\caption{Integration of the Insulin Pump into the Body Simulation}
-\label{fig:mvc_insulin_pump}
-\end{figure}
