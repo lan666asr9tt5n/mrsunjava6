@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulator.modules.insulin.InsulinModule (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">InsulinModule.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> simulator.modules.insulin;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> java.util.Date;
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Import">import</FONT> java.util.Vector;
+<FONT ID="LN">5   </FONT><A NAME="5"></A>
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> InsulinModule {
+<FONT ID="LN">7   </FONT><A NAME="7"></A>    Vector&lt;<A HREF="../../../simulator/modules/insulin/Injection.java.html">Injection</A>&gt; vecInsulin = <FONT ID="New">new</FONT> Vector&lt;<A HREF="../../../simulator/modules/insulin/Injection.java.html">Injection</A>&gt;();
+<FONT ID="LN">8   </FONT><A NAME="8"></A>    
+<FONT ID="LN">9   </FONT><A NAME="9"></A>    <FONT ID="Public">public</FONT> <FONT ID="Double">double</FONT> getRelInsulin(Date time){
+<FONT ID="LN">10  </FONT><A NAME="10"></A>        <FONT ID="Double">double</FONT> result = <FONT ID="IntegerLiteral">0</FONT>;
+<FONT ID="LN">11  </FONT><A NAME="11"></A>        <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> insulin_cnt = <FONT ID="IntegerLiteral">0</FONT>; insulin_cnt &lt; vecInsulin.size(); insulin_cnt++)
+<FONT ID="LN">12  </FONT><A NAME="12"></A>        {
+<FONT ID="LN">13  </FONT><A NAME="13"></A>            result += vecInsulin.elementAt(insulin_cnt).getInsulinAmount(time);
+<FONT ID="LN">14  </FONT><A NAME="14"></A>        }
+<FONT ID="LN">15  </FONT><A NAME="15"></A>        <FONT ID="Return">return</FONT> result;
+<FONT ID="LN">16  </FONT><A NAME="16"></A>    }
+<FONT ID="LN">17  </FONT><A NAME="17"></A>    
+<FONT ID="LN">18  </FONT><A NAME="18"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> addInjection(<A HREF="../../../simulator/modules/insulin/Injection.java.html">Injection</A> injection){
+<FONT ID="LN">19  </FONT><A NAME="19"></A>        vecInsulin.add(injection);
+<FONT ID="LN">20  </FONT><A NAME="20"></A>    }
+<FONT ID="LN">21  </FONT><A NAME="21"></A>    
+<FONT ID="LN">22  </FONT><A NAME="22"></A>    
+<FONT ID="LN">23  </FONT><A NAME="23"></A>}</pre>
+</BODY>
+</HTML>

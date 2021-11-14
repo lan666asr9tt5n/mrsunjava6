@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulator.modules.insulin.ShortActingInsulin (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">ShortActingInsulin.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="Package">package</FONT> simulator.modules.insulin;
+<FONT ID="LN">2   </FONT><A NAME="2"></A>
+<FONT ID="LN">3   </FONT><A NAME="3"></A><FONT ID="Import">import</FONT> java.util.Random;
+<FONT ID="LN">4   </FONT><A NAME="4"></A>
+<FONT ID="LN">5   </FONT><A NAME="5"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> ShortActingInsulin <FONT ID="Extends">extends</FONT> <A HREF="../../../simulator/modules/insulin/Insulin.java.html">Insulin</A> {
+<FONT ID="LN">6   </FONT><A NAME="6"></A>
+<FONT ID="LN">7   </FONT><A NAME="7"></A>    <FONT ID="Public">public</FONT> ShortActingInsulin() {
+<FONT ID="LN">8   </FONT><A NAME="8"></A>        <FONT ID="Super">super</FONT>.alpha = <FONT ID="IntegerLiteral">3</FONT>;
+<FONT ID="LN">9   </FONT><A NAME="9"></A>        <FONT ID="Super">super</FONT>.beta = <FONT ID="FloatPointLiteral">2.7</FONT>;
+<FONT ID="LN">10  </FONT><A NAME="10"></A>        <FONT ID="Super">super</FONT>.startingtime = ((<FONT ID="New">new</FONT> Random().nextInt() % <FONT ID="IntegerLiteral">10</FONT>) + <FONT ID="IntegerLiteral">25</FONT>)/<FONT ID="IntegerLiteral">60</FONT>;
+<FONT ID="LN">11  </FONT><A NAME="11"></A>        <FONT ID="Super">super</FONT>.duration = ((<FONT ID="New">new</FONT> Random().nextInt() % <FONT ID="IntegerLiteral">180</FONT>)/<FONT ID="IntegerLiteral">60</FONT>) + <FONT ID="IntegerLiteral">5</FONT>;
+<FONT ID="LN">12  </FONT><A NAME="12"></A>    }
+<FONT ID="LN">13  </FONT><A NAME="13"></A>    
+<FONT ID="LN">14  </FONT><A NAME="14"></A>}</pre>
+</BODY>
+</HTML>

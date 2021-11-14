@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulator.modules.food.LowGlycemicFood (Java2HTML)</TITLE>
+</HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LowGlycemicFood.java</font>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<FONT ID="LN">1   </FONT><A NAME="1"></A><FONT ID="FormalComment">/**
+<FONT ID="LN">2   </FONT><A NAME="2"></A> * 
+<FONT ID="LN">3   </FONT><A NAME="3"></A> */</FONT>
+<FONT ID="LN">4   </FONT><A NAME="4"></A><FONT ID="Package">package</FONT> simulator.modules.food;
+<FONT ID="LN">5   </FONT><A NAME="5"></A>
+<FONT ID="LN">6   </FONT><A NAME="6"></A><FONT ID="FormalComment">/**
+<FONT ID="LN">7   </FONT><A NAME="7"></A> * As low gylcemic food butter beans are assumed.
+<FONT ID="LN">8   </FONT><A NAME="8"></A> * Serving size is 150g.
+<FONT ID="LN">9   </FONT><A NAME="9"></A> * @author rc
+<FONT ID="LN">10  </FONT><A NAME="10"></A> *
+<FONT ID="LN">11  </FONT><A NAME="11"></A> */</FONT>
+<FONT ID="LN">12  </FONT><A NAME="12"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LowGlycemicFood <FONT ID="Extends">extends</FONT> <A HREF="../../../simulator/modules/food/AbstractFood.java.html">AbstractFood</A> {
+<FONT ID="LN">13  </FONT><A NAME="13"></A>
+<FONT ID="LN">14  </FONT><A NAME="14"></A>    <FONT ID="FormalComment">/**
+<FONT ID="LN">15  </FONT><A NAME="15"></A>     * @param ammount
+<FONT ID="LN">16  </FONT><A NAME="16"></A>     * @param time
+<FONT ID="LN">17  </FONT><A NAME="17"></A>     */</FONT>
+<FONT ID="LN">18  </FONT><A NAME="18"></A>    <FONT ID="Public">public</FONT> LowGlycemicFood(<FONT ID="Int">int</FONT> ammount, <FONT ID="Double">double</FONT> time) {
+<FONT ID="LN">19  </FONT><A NAME="19"></A>        <FONT ID="Super">super</FONT>(ammount, time, <FONT ID="IntegerLiteral">20</FONT>);
+<FONT ID="LN">20  </FONT><A NAME="20"></A>        <FONT ID="SingleLineComment">// TODO Auto-generated constructor stub
+<FONT ID="LN">21  </FONT><A NAME="21"></A></FONT>    }
+<FONT ID="LN">22  </FONT><A NAME="22"></A>
+<FONT ID="LN">23  </FONT><A NAME="23"></A>    <FONT ID="MultiLineComment">/* (non-Javadoc)
+<FONT ID="LN">24  </FONT><A NAME="24"></A>     * @see simulator.modules.food.AbstractFood#calculateGlucose(int)
+<FONT ID="LN">25  </FONT><A NAME="25"></A>     */</FONT>
+<FONT ID="LN">26  </FONT><A NAME="26"></A>    @Override
+<FONT ID="LN">27  </FONT><A NAME="27"></A>    <FONT ID="Double">double</FONT> calculateGlucose(<FONT ID="Double">double</FONT> time) {
+<FONT ID="LN">28  </FONT><A NAME="28"></A>        <FONT ID="Double">double</FONT> localTime = time - <FONT ID="This">this</FONT>.time;
+<FONT ID="LN">29  </FONT><A NAME="29"></A>        <FONT ID="Double">double</FONT> quotient = localTime / <FONT ID="FloatPointLiteral">9.d</FONT>;
+<FONT ID="LN">30  </FONT><A NAME="30"></A>        <FONT ID="If">if</FONT> (quotient &gt; <FONT ID="FloatPointLiteral">0.7</FONT> &amp;&amp; quotient &lt; <FONT ID="FloatPointLiteral">1.3</FONT>) <FONT ID="Return">return</FONT> <FONT ID="FloatPointLiteral">0.7</FONT>;
+<FONT ID="LN">31  </FONT><A NAME="31"></A>        <FONT ID="Return">return</FONT> (quotient &lt; <FONT ID="IntegerLiteral">1</FONT>) ? quotient : <FONT ID="IntegerLiteral">2</FONT> - quotient;  
+<FONT ID="LN">32  </FONT><A NAME="32"></A>    }
+<FONT ID="LN">33  </FONT><A NAME="33"></A>
+<FONT ID="LN">34  </FONT><A NAME="34"></A>}
+<FONT ID="LN">35  </FONT><A NAME="35"></A></pre>
+</BODY>
+</HTML>
