@@ -6,7 +6,7 @@ First project estimation:
 \begin{itemize}
   \item Behavior Simulation
   	\begin{itemize}
-        \item eat (Guess: 450 LOC)
+        \item food (Guess: 450 LOC)
         \item insulin (Guess: 400 LOC)
         \item diabetes (Guess: 400 LOC)
     \end{itemize}
@@ -17,7 +17,40 @@ First project estimation:
         \item User Interface (Alarm/Input) (Guess: 500)
     \end{itemize}
 \end{itemize} 
+Overall guessed LOC are 2500.
 Guessed Estimation based on Experts Cocomo 2:
 Effort 13.4 Person-months
 Schedule 8.5 Months
 \url{http://sunset.usc.edu/cgi-bin/expert_cocomo2000}
+
+Results from calculating metrics with ``Metrics-Eclipse plugin''
+\footnote{Update site for ``Metrics-Eclipse plugin''
+\url{http://metrics.sourceforge.net/update}} as state of 16th of january 2009:
+\begin{itemize}
+  \item Behavior Simulation
+  	\begin{itemize}
+        \item food (LOC total 309; UI/Test ~194 LOC; Effective ~115 LOC)
+        \item insulin (123 LOC)
+        \item diabetes (47 LOC)
+        \item model (76 LOC)
+        \item view (227 LOC)
+        \begin{itemize}
+          \item Input (151 LOC; GUI 80 LOC; CSV 60 LOC)
+          \item Output (176 LOC; GUI 114 LOC; CSV 50 LOC)
+        \end{itemize}
+        \item controller (141 LOC)
+        \item csv (295 LOC)
+    \end{itemize}
+  \item Simulating Insulin Pump (Very basic implementation as of 16th of
+  january 2009)
+  	\begin{itemize}
+        \item actor (Insulin injection) (Guess: 14 LOC)
+        \item sensor (Glucose Level Monitor) (Guess: 17 LOC)
+        \item User Interface (Alarm/Input) (Guess: 0 LOC (not implemented))
+        \item Logic 15
+    \end{itemize}
+\end{itemize} 
+The overall count of LOC from the computation using this module is 1390.
+Using a different plugin (eclipsemetrics \footnote{Eclipsemetrics homepage
+\url{http://www.stateofflow.com/projects/16/eclipsemetrics}}) to calculate the
+total LOC the resulting value is 1191.
