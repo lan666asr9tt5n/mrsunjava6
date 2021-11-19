@@ -48,14 +48,11 @@ may lead to seizures or episodes of unconsciousness and absolutely must be
 treated immediately, via emergency high-glucose gell placed in the patient's
 mouth or an injection of glucagon.
 
-\paragraph{Simulation}
-The diabetes module needs to simulate the insulin production of an ill pancreas. 
-As an indicator the module needs the amount of carbonate in the stomach and the time of calculation.
-
 \paragraph{Formulas}
 The calculation of absorbed insulin at a time is controlled by intervals. The pancreas produces insulin in intervals from 3-6min.
 If the diabetes module indicates some new carbonates in the stomach, the total amount of needed insulin is calculated.
 For 1 unit of carbonate we need 1/12 unit of insulin (\#Beril/Murat: pls look
+%TODO
 for correct units). Than a square function is calculated, which covers the amount of insulin needed.
 
 \newpage
