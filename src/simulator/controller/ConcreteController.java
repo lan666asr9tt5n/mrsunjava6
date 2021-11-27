@@ -57,18 +57,22 @@ public class ConcreteController extends AbstractController {
 		this.addFood(foodType, this.timeSource.timer.getTime());
 	}
 	@Override
-	public void addInsulin(InsulinType insulinType) {
+	public void addInsulin(InsulinType insulinType,double amount) {
 		switch(insulinType){
-			case LONG:
-				super.model.addInsulin(new LongActingInsulin());
-				break;
-			case RAPID:
-				super.model.addInsulin(new RapidActingInsulin());				
-				break;				
-			case SHORT:
-				super.model.addInsulin(new ShortActingInsulin());					
-				break;				
+		case LONG:
+			super.model.addInsulin(new LongActingInsulin(),amount);
+			break;
+		case RAPID:
+			super.model.addInsulin(new RapidActingInsulin(),amount);				
+			break;				
+		case SHORT:
+			super.model.addInsulin(new ShortActingInsulin(),amount);					
+			break;				
 		}
+	}
+	@Override
+	public void addInsulin(InsulinType insulinType) {
+		addInsulin(insulinType,180);
 	}
 	@Override	
 	public void addFood(FoodType foodType,long inputTimeSource) {
@@ -122,10 +126,4 @@ public class ConcreteController extends AbstractController {
 		}		
 	}
 
-	@Override
-	public void addInsulin(InsulinType insulinType,double amount) {
-		// TODO Auto-generated method stub
-		
-	}	
 }
-

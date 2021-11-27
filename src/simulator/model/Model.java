@@ -55,6 +55,7 @@ public class Model extends Observable {
 	public static final double glucoseBaseLevel = 5.5;
 
 	// TODO: upper bound = 7.5 ok?
+	public static final double glucoseCriticalUpperBound = 10.5;
 	public static final double glucoseUpperBound = 7.5;
 	public static final double glucoseLowerBound = 4.0;
 
@@ -74,8 +75,11 @@ public class Model extends Observable {
 	/**
 	 * Add insulin to simulation.
 	 */
+	public void addInsulin(Insulin insulin,double amount) {
+		this.insulinModule.addInjection(new Injection(insulin, time, amount));
+	}
 	public void addInsulin(Insulin insulin) {
-		this.insulinModule.addInjection(new Injection(insulin, time, 180));
+		addInsulin(insulin, 180);
 	}
 
 	/**
@@ -134,3 +138,4 @@ public class Model extends Observable {
 		return overallInsulin;
 	}
 }
+

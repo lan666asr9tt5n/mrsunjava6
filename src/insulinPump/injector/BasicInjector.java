@@ -4,7 +4,6 @@
 package insulinPump.injector;
 
 import simulator.controller.AbstractController;
-import simulator.view.input.AbstractInput;
 
 /**
  * 
@@ -13,7 +12,7 @@ import simulator.view.input.AbstractInput;
  * @author rc
  * 
  */
-public class BasicInjector extends AbstractInput {
+public class BasicInjector extends AbstractInjector {
 
 	public BasicInjector(AbstractController controller) {
 		super(controller);
@@ -23,7 +22,14 @@ public class BasicInjector extends AbstractInput {
 	public void workLoop() {
 	}
 
+	@Override
 	public void injectInsulin() {
 		this.controller.addInsulin(AbstractController.InsulinType.RAPID);
 	}
+
+	@Override
+	public void injectInsulin(double amount) {
+		this.controller.addInsulin(AbstractController.InsulinType.RAPID, amount);
+	}
+
 }

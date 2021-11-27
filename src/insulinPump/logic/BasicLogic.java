@@ -5,7 +5,6 @@ package insulinPump.logic;
 
 import simulator.model.Model;
 import insulinPump.injector.BasicInjector;
-import insulinPump.sensor.BasicSensor;
 
 /**
  * This class serves as the very basic example of how to possibly implement the
@@ -14,7 +13,7 @@ import insulinPump.sensor.BasicSensor;
  * @author rc
  * 
  */
-public class BasicLogic {
+public class BasicLogic implements Logic {
 
 	private BasicInjector basicInjector;
 
@@ -39,3 +38,4 @@ public class BasicLogic {
 		}
 	}
 }
+

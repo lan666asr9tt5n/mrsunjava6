@@ -4,6 +4,7 @@ import java.io.File;
 
 import insulinPump.injector.BasicInjector;
 import insulinPump.logic.BasicLogic;
+import insulinPump.logic.ExtendedLogic;
 import insulinPump.sensor.BasicSensor;
 import simulator.controller.AbstractController;
 import simulator.controller.ConcreteController;
@@ -26,10 +27,12 @@ public class TestDriver {
 		AbstractController contr = new ConcreteController(mod);
 		GraphicalOutput output = new GraphicalOutput(mod);
 		AbstractInput in = new GraphicalInput(contr, output);
-		
+
 		BasicInjector injector = new BasicInjector(contr);
-		BasicLogic logic = new BasicLogic(injector);
+		//BasicLogic logic = new BasicLogic(injector);
+		ExtendedLogic logic = new ExtendedLogic(injector);
 		BasicSensor sensor = new BasicSensor(mod,logic);
+
 		new CSVOutput(mod,new File("testOutput.csv"),true);
 		in.workLoop();
 	}
