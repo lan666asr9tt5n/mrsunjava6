@@ -51,7 +51,87 @@ pangria. This static amount will be included in the calculation.
   user if he is in the dangerous area (to high or to low)
 \end{itemize}
 
+\subsection{Automation of the Insulin pump}
+In the first step we divided our glucose range in 4 different. These parts are already mentioned in the research part.
+
+Critical to low level (LL) – glucose level is less or equal to 4 mmol/l
+
+Normal  level (NL) - glucose level between 4 and 7,5 mmol/l
+
+Increased level (IL) - glucose level between 7,5 and 10 mmol/l
+
+Critical to high level (HL) - glucose level is equal or greater than 4 mmol/l
+
+\subsubsection{The measuring process}
+For the measurement we decided to use the following values:
+\begin{itemize}
+  \item Difference in the glucose level between either the last injection or
+  the point in time where the level reaches the increased level coming from the normal level.
+  \item The insulin that will be available in a defined period (e.g. 3h) 
+\end{itemize}
+
+\subsubsection{The calculation}
+There are two values that need to be calculated
+\begin{itemize}
+  \item The time between the injections
+  \item The amount of insulin that will be injected  
+\end{itemize}
+These two values can be either fixed or dynamic. In the following Paragraphs all combinations will be discussed.
+
+\paragraph{Fixed amount of insulin and fixed time difference}
+This is a pretty simple idea which comes from the fact that if a person is ill the pump could keep person on a constant healthy insulin level. A problem is that this attempt can’t react on peaks in the glucose level. So this is to less.
+
+\paragraph{Dynamic amount of insulin and fixed time difference}
+In this attempt there is an algorithm where we calculate a factor from the difference in the glucose level between 2 measurements.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/graf1.jpg}
+\caption{Formula 1}
+\label{fig:formula_1}
+\end{figure}
+This factor (F) then can be multiplied with a fixed an predefined amount of insulin (I). The injection just happens if the factor is positive. This is an attempt which gives a first result where the peeks are handled. The problem is after the peek there is a hangover of the effect of insulin so that the glucose level is falling down maybe to the LL which can end up in a clops or dead.
+
+\paragraph{Fixed amount of insulin and dynamic time difference}
+In this attempt we have small periods (e.g. 30s) between the measurements. If the difference in the glucose level between the current measurement and the last injection, exceeds a defined factor than a fixed amount of insulin will be injected.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/graf2.jpg}
+\caption{Formula 2}
+\label{fig:formula_2}
+\end{figure}
+In this attempt the there is the same problem with the hangover of the effect of al the injections as it was in the attempt before.
+
+\paragraph{Dynamic amount of insulin and dynamic time difference}
+To handle all the problems which have been mentioned we need both ideas combined together. The following steps are needed in this algorithm:
+\begin{itemize}
+  \item First thing is to define a so called reference level (RL) wich will be
+  somewhere in the middle of the normal level range
+  \item For the different levels we have different factors which need to be
+  reached. These factors are calculated from the difference since the last injection or the last entrance of the increased level for the increased and the tor high level there are different factors so that if the to high level is reached the period between the injections will be shorter.
+  \item If the factor is reached the amount of insulin will be calculated.
+  \item First the available amount of insulin (AI = Available insulin) can be
+  calculated by the insulin-module with the information of the preceding injections and by the pangria-module.
+  \item With this information we can calculate the amount of glucose that will
+  be absorbed (AG = Absorbed glucose) by the insulin
+  \item now we can calculate the difference between the actual glucose level
+  (AGL = Actual Glucose Level) and the RL. There we get the needed Insulin (NI = Needed Insulin).
+  \item From this it follows that we have the difference (GD = Glucose
+  difference) between the AGL and the AG
+  \item After that we can calculate the insulin level for GD and inject it.
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{images/graf3.jpg}
+\caption{Formula 3}
+\label{fig:formula_3}
+\end{figure}
+This algorithm should hold the glucose level in average on a normal level.
+
+
+
 \section{Analysis Model}
+
 
 \section{Design Model}
 Thanks to the very open and felxible implementation of the Body Simulation
