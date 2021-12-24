@@ -1,0 +1,60 @@
+\BOOKMARK [0][-]{chapter.1}{Project Management}{}
+\BOOKMARK [1][-]{section.1.1}{Organization}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.1.1}{Mindmap}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.2}{Development Process Model}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.3}{Standardization}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.4}{Specifications}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.5}{Risks}{section.1.1}
+\BOOKMARK [3][-]{subsubsection.1.1.5.1}{Risk Handling}{subsection.1.1.5}
+\BOOKMARK [1][-]{section.1.2}{Requirements and Project Estimation}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Development \(Body Simulation\)}{}
+\BOOKMARK [1][-]{section.2.1}{Requirements Analysis}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Research}{section.2.1}
+\BOOKMARK [3][-]{subsubsection.2.1.1.1}{Diabetes}{subsection.2.1.1}
+\BOOKMARK [4][-]{section*.3}{Diabetes type 1}{subsubsection.2.1.1.1}
+\BOOKMARK [4][-]{section*.4}{Formulas}{subsubsection.2.1.1.1}
+\BOOKMARK [3][-]{subsubsection.2.1.1.2}{Food}{subsection.2.1.1}
+\BOOKMARK [4][-]{section*.5}{Simulation}{subsubsection.2.1.1.2}
+\BOOKMARK [4][-]{section*.6}{Formulas}{subsubsection.2.1.1.2}
+\BOOKMARK [4][-]{section*.7}{Implementation}{subsubsection.2.1.1.2}
+\BOOKMARK [3][-]{subsubsection.2.1.1.3}{Insulin}{subsection.2.1.1}
+\BOOKMARK [4][-]{section*.8}{Types}{subsubsection.2.1.1.3}
+\BOOKMARK [4][-]{section*.9}{Dosage and Timing}{subsubsection.2.1.1.3}
+\BOOKMARK [4][-]{section*.10}{Strategies}{subsubsection.2.1.1.3}
+\BOOKMARK [4][-]{section*.11}{Existing products}{subsubsection.2.1.1.3}
+\BOOKMARK [1][-]{section.2.2}{List of Requirements}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.2.1}{Behavioral Modules}{section.2.2}
+\BOOKMARK [3][-]{subsubsection.2.2.1.1}{Diabetes Module}{subsection.2.2.1}
+\BOOKMARK [4][-]{section*.12}{Simulation}{subsubsection.2.2.1.1}
+\BOOKMARK [3][-]{subsubsection.2.2.1.2}{Food Module}{subsection.2.2.1}
+\BOOKMARK [3][-]{subsubsection.2.2.1.3}{Insulin Module}{subsection.2.2.1}
+\BOOKMARK [2][-]{subsection.2.2.2}{Body Simulation}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.3}{Test Cases}{section.2.2}
+\BOOKMARK [1][-]{section.2.3}{Analysis Models}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.3.1}{Behavioral modules and interaction}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.2}{Body simulation \(aka: putting behavioral modules together\)}{section.2.3}
+\BOOKMARK [1][-]{section.2.4}{Design Models}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.4.1}{Behavioral Modules}{section.2.4}
+\BOOKMARK [3][-]{subsubsection.2.4.1.1}{Food}{subsection.2.4.1}
+\BOOKMARK [2][-]{subsection.2.4.2}{Body Simulation}{section.2.4}
+\BOOKMARK [0][-]{chapter.3}{Development \(Insulin Pump\)}{}
+\BOOKMARK [1][-]{section.3.1}{Research}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Calculation steps}{section.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.1.1}{Calculate the gradient \(GR\) for the current timestamp}{subsection.3.1.1}
+\BOOKMARK [3][-]{subsubsection.3.1.1.2}{Calculate the available insulin \(IN\)}{subsection.3.1.1}
+\BOOKMARK [3][-]{subsubsection.3.1.1.3}{Calculate the actual needed amount of insulin}{subsection.3.1.1}
+\BOOKMARK [2][-]{subsection.3.1.2}{Further Thoughts}{section.3.1}
+\BOOKMARK [1][-]{section.3.2}{Analysis Model}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Automation of the Insulin pump}{section.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.1.1}{The measuring process}{subsection.3.2.1}
+\BOOKMARK [3][-]{subsubsection.3.2.1.2}{The calculation}{subsection.3.2.1}
+\BOOKMARK [4][-]{section*.13}{Fixed amount of insulin and fixed time difference}{subsubsection.3.2.1.2}
+\BOOKMARK [4][-]{section*.14}{Dynamic amount of insulin and fixed time difference}{subsubsection.3.2.1.2}
+\BOOKMARK [4][-]{section*.15}{Fixed amount of insulin and dynamic time difference}{subsubsection.3.2.1.2}
+\BOOKMARK [4][-]{section*.16}{Dynamic amount of insulin and dynamic time difference}{subsubsection.3.2.1.2}
+\BOOKMARK [1][-]{section.3.3}{Design Model}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Conclusion}{}
+\BOOKMARK [1][-]{section.4.1}{Summary}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Conclusion}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Future}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Thank You}{chapter.4}

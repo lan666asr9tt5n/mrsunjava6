@@ -1,0 +1,61 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Project Management}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Organization}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Mindmap}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Development Process Model}{6}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Standardization}{8}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Specifications}{8}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}Risks}{8}{subsection.1.1.5}
+\contentsline {subsubsection}{\numberline {1.1.5.1}Risk Handling}{8}{subsubsection.1.1.5.1}
+\contentsline {section}{\numberline {1.2}Requirements and Project Estimation}{8}{section.1.2}
+\contentsline {chapter}{\numberline {2}Development (Body Simulation)}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Requirements Analysis}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Research}{10}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Diabetes}{10}{subsubsection.2.1.1.1}
+\contentsline {paragraph}{Diabetes type 1}{10}{section*.3}
+\contentsline {paragraph}{Formulas}{11}{section*.4}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Food}{12}{subsubsection.2.1.1.2}
+\contentsline {paragraph}{Simulation}{12}{section*.5}
+\contentsline {paragraph}{Formulas}{13}{section*.6}
+\contentsline {paragraph}{Implementation}{14}{section*.7}
+\contentsline {subsubsection}{\numberline {2.1.1.3}Insulin}{15}{subsubsection.2.1.1.3}
+\contentsline {paragraph}{Types}{16}{section*.8}
+\contentsline {paragraph}{Dosage and Timing}{16}{section*.9}
+\contentsline {paragraph}{Strategies}{17}{section*.10}
+\contentsline {paragraph}{Existing products}{17}{section*.11}
+\contentsline {section}{\numberline {2.2}List of Requirements}{18}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Behavioral Modules}{19}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Diabetes Module}{19}{subsubsection.2.2.1.1}
+\contentsline {paragraph}{Simulation}{19}{section*.12}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Food Module}{19}{subsubsection.2.2.1.2}
+\contentsline {subsubsection}{\numberline {2.2.1.3}Insulin Module}{20}{subsubsection.2.2.1.3}
+\contentsline {subsection}{\numberline {2.2.2}Body Simulation}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Test Cases}{20}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Analysis Models}{21}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Behavioral modules and interaction}{21}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Body simulation (aka: putting behavioral modules together)}{22}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Design Models}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Behavioral Modules}{23}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Food}{23}{subsubsection.2.4.1.1}
+\contentsline {subsection}{\numberline {2.4.2}Body Simulation}{24}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}Development (Insulin Pump)}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}Research}{26}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Calculation steps}{26}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Calculate the gradient (GR) for the current timestamp}{26}{subsubsection.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Calculate the available insulin (IN)}{26}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}Calculate the actual needed amount of insulin}{26}{subsubsection.3.1.1.3}
+\contentsline {subsection}{\numberline {3.1.2}Further Thoughts}{27}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Analysis Model}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Automation of the Insulin pump}{27}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}The measuring process}{27}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}The calculation}{28}{subsubsection.3.2.1.2}
+\contentsline {paragraph}{Fixed amount of insulin and fixed time difference}{28}{section*.13}
+\contentsline {paragraph}{Dynamic amount of insulin and fixed time difference}{28}{section*.14}
+\contentsline {paragraph}{Fixed amount of insulin and dynamic time difference}{29}{section*.15}
+\contentsline {paragraph}{Dynamic amount of insulin and dynamic time difference}{29}{section*.16}
+\contentsline {section}{\numberline {3.3}Design Model}{31}{section.3.3}
+\contentsline {chapter}{\numberline {4}Conclusion}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Summary}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Conclusion}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Future}{34}{section.4.3}
+\contentsline {section}{\numberline {4.4}Thank You}{35}{section.4.4}

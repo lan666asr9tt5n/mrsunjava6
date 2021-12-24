@@ -1,0 +1,22 @@
+\begin{thebibliography}{FPHBM02}
+
+\bibitem[Dav05]{mit:glycemicindex}
+K.~Davis.
+\newblock {Glycemic Index}, 2005.
+\newblock
+  \url{http://web.mit.edu/athletics/sportsmedicine/wcrglycemicindex.html}.
+
+\bibitem[FPHBM02]{glycemicindex:table}
+Kaye Foster-Powell, Susanna~HA Holt, and Janette~C Brand-Miller.
+\newblock {International table of glycemic index and glycemic load values:
+  2002}.
+\newblock {\em {The American Journal of Clinic Nutrition}}, 2002.
+\newblock \url{http://www.ajcn.org/cgi/reprint/76/1/5}.
+
+\bibitem[{Nor}05]{norden:glycemicindex}
+{Nordic Council of Ministers}.
+\newblock {\em {Glycemic Index - From Research to Nutrition Recommendations?}}
+\newblock {Nordic Council of Ministers}, 2005.
+\newblock \url{http://www.norden.org/pub/velfaerd/livsmedel/uk/TN2005589.pdf}.
+
+\end{thebibliography}
