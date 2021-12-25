@@ -35,10 +35,21 @@ public class Injection {
 		
 		result = insulin.getPercent(timelast, timenow) * insulinAmount;
 		//System.out.println(result);
-		lastCalculation = time;
 		return result;
 	}
-	
+
+	public double getPredictedInsulinAmount(){
+		double result = 0;
+		
+		double timenow = DateDiff(injectionTime, new Date());
+		double timefuture = DateDiff(injectionTime, new Date((long) (injectionTime.getTime() + insulin.getDuration())));
+		//System.out.println(Double.toString(timelast) + '-' + Double.toString(timenow));
+		
+		result = insulin.getPercent(timenow, timefuture) * insulinAmount;
+		//System.out.println(result);
+		return result;
+	}
+
 	private double DateDiff(Date date1, Date date2){
 		return (double)(date2.getTime()-date1.getTime())/3600000;
 	}
