@@ -4,6 +4,7 @@
 package insulinPump.sensor;
 
 import insulinPump.logic.BasicLogic;
+import insulinPump.logic.Logic;
 
 import java.util.Observable;
 
@@ -18,9 +19,9 @@ import simulator.view.output.AbstractOutput;
  */
 public class BasicSensor extends AbstractOutput {
 
-	private BasicLogic basicLogic;
+	private Logic basicLogic;
 
-	public BasicSensor(Model model2, BasicLogic basicLogic2) {
+	public BasicSensor(Model model2, Logic basicLogic2) {
 		super(model2);
 		model2.addObserver(this);
 		basicLogic = basicLogic2;
