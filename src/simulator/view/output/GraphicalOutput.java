@@ -37,6 +37,8 @@ public class GraphicalOutput extends AbstractOutput {
 	private JFreeChart chart;
 	private TimeSeries foodGlucoseLevel = new TimeSeries("Food Glucose",
 			Minute.class);
+	private TimeSeries glucoseCritUpperBound = new TimeSeries("Glucose Upper Bound",
+			Minute.class);
 	private TimeSeries glucoseUpperBound = new TimeSeries("Glucose Upper Bound",
 			Minute.class);
 	private TimeSeries glucoseLowerAbound = new TimeSeries("Glucose Lower Bound",
@@ -70,6 +72,7 @@ public class GraphicalOutput extends AbstractOutput {
 		this.foodGlucoseLevel.setMaximumItemAge(mIA);
 		this.absoluteGlucoseLevel.setMaximumItemAge(mIA);
 		this.glucoseLowerAbound.setMaximumItemAge(mIA);
+		this.glucoseCritUpperBound.setMaximumItemAge(mIA);
 		this.glucoseUpperBound.setMaximumItemAge(mIA);
 		this.relativeInsulinLevel.setMaximumItemAge(mIA);
 		this.diabetesInsulinLevel.setMaximumItemAge(mIA);
@@ -79,6 +82,7 @@ public class GraphicalOutput extends AbstractOutput {
 		dataset.addSeries(this.foodGlucoseLevel);
 		dataset.addSeries(this.absoluteGlucoseLevel);
 		dataset.addSeries(this.glucoseLowerAbound);
+		dataset.addSeries(this.glucoseCritUpperBound);
 		dataset.addSeries(this.glucoseUpperBound);
 		dataset.addSeries(this.relativeInsulinLevel);
 		dataset.addSeries(this.diabetesInsulinLevel);
@@ -126,6 +130,7 @@ public class GraphicalOutput extends AbstractOutput {
 		this.foodGlucoseLevel.add(min, this.model.getFoodGlucose());
 		this.absoluteGlucoseLevel.add(min, this.model.getAbsoluteGlucose());
 		this.glucoseLowerAbound.add(min, Model.glucoseLowerBound);
+		this.glucoseCritUpperBound.add(min, Model.glucoseCriticalUpperBound);
 		this.glucoseUpperBound.add(min, Model.glucoseUpperBound);
 		this.relativeInsulinLevel.add(min, this.model.getInjectedInsulin());
 		this.diabetesInsulinLevel.add(min, this.model.getDiabetesInsulin());
